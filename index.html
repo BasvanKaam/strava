@@ -6,7 +6,7 @@
 <title>bvk. Running</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
@@ -14,12 +14,13 @@
   --espresso:#291a10; --espresso2:#34230f; --maroon:#a8331c;
   --terra:#d8572b; --amber:#f0a830; --avocado:#8a9a3c; --teal:#2f8a86; --coral:#ec7a5a;
   --cream:#f6ecd6; --cream2:#ece0c4; --rust:#7a3a1c;
-  --disp:'Bagel Fat One',cursive; --body:'Fredoka',sans-serif;
+  --disp:'Baloo 2',cursive; --body:'Fredoka',sans-serif;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-text-size-adjust:100%}
 body{background:var(--espresso); color:var(--cream); font-family:var(--body); font-weight:400;
   line-height:1.55; -webkit-font-smoothing:antialiased; overflow-x:hidden}
+.wordmark,.hero,.stat-value,.sectitle,.lead h2,.ycard .yn,.rcell .rn,.gauge-center .val,.clip h4,.agnav h3,.agnav button,.cell .km,table.log td.num,.callout b,.footsig,.goalhead input{font-weight:800}
 
 .bg-base{position:fixed; inset:0; z-index:0; pointer-events:none;
   background:
@@ -27,13 +28,13 @@ body{background:var(--espresso); color:var(--cream); font-family:var(--body); fo
     radial-gradient(ellipse 640px 460px at 4% 90%, rgba(138,154,60,.16), transparent 62%),
     linear-gradient(180deg,var(--espresso),var(--espresso2));}
 /* clear 70s sun */
-.sun{position:fixed; top:46px; left:50%; transform:translateX(-50%); width:520px; height:520px; z-index:0; pointer-events:none;
-  -webkit-mask-image:radial-gradient(circle at 50% 30%, #000 30%, transparent 62%);
-  mask-image:radial-gradient(circle at 50% 30%, #000 30%, transparent 62%); opacity:.55}
-.sun .rays{position:absolute; inset:0;
-  background:repeating-conic-gradient(from 0deg at 50% 30%, var(--amber) 0deg 2.4deg, transparent 2.4deg 9deg);}
-.sun .disc{position:absolute; top:30%; left:50%; transform:translate(-50%,-50%); width:170px; height:170px; border-radius:50%;
-  background:radial-gradient(circle, var(--amber) 0%, var(--terra) 62%, rgba(216,87,43,0) 78%); filter:blur(1px)}
+.sun{position:fixed; top:-140px; left:50%; transform:translateX(-50%); width:1180px; max-width:150vw; height:1180px; z-index:0; pointer-events:none;
+  -webkit-mask-image:radial-gradient(circle at 50% 32%, #000 16%, transparent 56%);
+  mask-image:radial-gradient(circle at 50% 32%, #000 16%, transparent 56%); opacity:.3}
+.sun .rays{position:absolute; inset:0; opacity:.45;
+  background:repeating-conic-gradient(from 0deg at 50% 32%, rgba(240,168,48,.65) 0deg 1.8deg, transparent 1.8deg 11deg);}
+.sun .disc{position:absolute; top:32%; left:50%; transform:translate(-50%,-50%); width:360px; height:360px; border-radius:50%;
+  background:radial-gradient(circle, rgba(240,168,48,.85) 0%, rgba(216,87,43,.45) 55%, rgba(216,87,43,0) 76%); filter:blur(10px)}
 .bg-grain{position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.045; mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
 
@@ -194,7 +195,7 @@ footer{position:relative; z-index:2; border-top:2px solid rgba(122,58,28,.5); ma
   .rec{grid-template-columns:1fr 1fr}
   .agnav h3{font-size:19px; min-width:140px}
   .wordmark-sub{display:none}
-  .sun{width:380px; height:380px; top:64px}
+  .sun{width:820px; height:820px; top:-60px}
 }
 </style>
 </head>
@@ -222,8 +223,6 @@ footer{position:relative; z-index:2; border-top:2px solid rgba(122,58,28,.5); ma
     <div class="issue" id="issue">Field notes from the road, built by night</div>
     <div class="hero">Miles logged.<br>Legs earned.<br><b>No fluff.</b></div>
     <div class="tagline">Every run, honestly counted. No noise, no bike data, just what the clock and the legs actually did.</div>
-
-    <div id="kudosBanner"></div>
 
     <div class="card lead" id="leadStory" style="margin-top:26px">
       <div class="mini"><div style="background:#d8572b"></div><div style="background:#f0a830"></div><div style="background:#8a9a3c"></div><div style="background:#2f8a86"></div></div>
@@ -259,8 +258,7 @@ footer{position:relative; z-index:2; border-top:2px solid rgba(122,58,28,.5); ma
         <div class="note" id="acwrText" style="text-align:center"></div></div></div>
     </div>
 
-    <div class="grid g2" style="margin-bottom:10px">
-      <div class="card"><div class="mini"><div style="background:#d8572b"></div><div style="background:#f0a830"></div><div style="background:#8a9a3c"></div><div style="background:#2f8a86"></div></div><div class="pad"><h3>Race predictor</h3><div class="ck">estimated from your best run</div><table class="pred" id="predTable"></table><div class="note" id="predNote"></div></div></div>
+    <div class="grid" style="margin-bottom:10px">
       <div class="card"><div class="mini"><div style="background:#d8572b"></div><div style="background:#f0a830"></div><div style="background:#8a9a3c"></div><div style="background:#2f8a86"></div></div><div class="pad"><h3>Kudos counter</h3><div class="ck">the applause, by month</div><div class="chartbox"><canvas id="cKudos"></canvas></div><div class="callout" id="kudosNote"></div></div></div>
     </div>
   </section>
@@ -327,11 +325,8 @@ async function boot(){
     document.getElementById("ftCount").textContent=""; return;
   }
   document.getElementById("ftCount").textContent=RUNS.length+" runs in the archive";
-  if(!kudosKnown){
-    document.getElementById("kudosBanner").innerHTML=`<div class="banner"><i class="ti ti-alert-triangle"></i><div>Kudos data is missing from activities.json. Replace fetch_strava.py with the latest version and re-run the GitHub Action, then hard refresh.</div></div>`;
-  }
   lead(); stats(); records(); chWeek(); chMonth(); chYear(); chPace(); chHour(); chKudos();
-  goalCard(); acwr(); predictor(); feed(); years();
+  goalCard(); acwr(); feed(); years();
   calMonth=new Date(RUNS[0]._d.getFullYear(),RUNS[0]._d.getMonth(),1); cal(); log();
 }
 
@@ -450,15 +445,6 @@ function acwr(){
   mk("cAcwr",{type:"doughnut",data:{datasets:[{data:[val,rem],backgroundColor:[zoneColor,"rgba(122,58,28,.12)"],borderWidth:0,circumference:270,rotation:225,borderRadius:[20,0]}]},
     options:{responsive:true,maintainAspectRatio:false,cutout:"76%",plugins:{legend:{display:false},tooltip:{enabled:false}}}});
 }
-function predictor(){
-  const base=VALID.filter(a=>a.distance_km>=3&&a.moving_time_s>=300).reduce((m,a)=>{const p=runPace(a);return(!m||p<m.p)?{p,a}:m;},null);
-  const tb=document.getElementById("predTable");
-  if(!base){tb.innerHTML="<tr><td>Not enough data yet, run 3 km or more first.</td></tr>";document.getElementById("predNote").textContent="";return;}
-  const d1=base.a.distance_km,t1=base.a.moving_time_s;
-  tb.innerHTML=[["5 km",5],["10 km",10],["Half marathon",21.0975],["Marathon",42.195]].map(([n,d])=>`<tr><td>${n}</td><td>${fmtTime(t1*Math.pow(d/d1,1.06))}</td></tr>`).join("");
-  document.getElementById("predNote").textContent=`Estimated from your best run, ${d1.toFixed(1)} km in ${fmtTime(t1)}, with the Riegel formula. Indicative, no promises.`;
-}
-
 function feed(){
   document.getElementById("feedList").innerHTML=RUNS.slice(0,feedN).map(a=>{
     const p=runPace(a),b=[];
@@ -472,7 +458,6 @@ function feed(){
         <div><div class="v">${a.distance_km.toFixed(2)}</div><div class="k">km</div></div>
         <div><div class="v">${fmtPace(p)}</div><div class="k">pace /km</div></div>
         <div><div class="v">${fmtTime(a.moving_time_s)}</div><div class="k">time</div></div>
-        <div><div class="v">${a.avg_hr?Math.round(a.avg_hr):"–"}</div><div class="k">heart rate</div></div>
         <div><div class="v">${a.elevation_m?Math.round(a.elevation_m):"–"}</div><div class="k">climb m</div></div>
         <div><div class="v">${ku(a)}</div><div class="k">kudos</div></div>
       </div>${b.length?`<div class="badges">${b.join("")}</div>`:""}</div></article>`;
@@ -499,10 +484,10 @@ document.getElementById("agPrev").onclick=()=>{calMonth.setMonth(calMonth.getMon
 document.getElementById("agNext").onclick=()=>{calMonth.setMonth(calMonth.getMonth()+1);cal();};
 
 function log(){
-  const cols=[["_d","Date"],["name","Name"],["distance_km","Distance"],["_pace","Pace"],["moving_time_s","Time"],["avg_hr","HR"],["elevation_m","Climb"],["kudos","Kudos"]];
+  const cols=[["_d","Date"],["name","Name"],["distance_km","Distance"],["_pace","Pace"],["moving_time_s","Time"],["elevation_m","Climb"],["kudos","Kudos"]];
   const rows=RUNS.map(a=>({...a,_pace:runPace(a),kudos:ku(a)})).sort((x,y)=>{let A=sortKey==="_d"?x._d:x[sortKey],B=sortKey==="_d"?y._d:y[sortKey];A=A??-1;B=B??-1;return (A>B?1:A<B?-1:0)*sortDir;});
   let h="<tr>"+cols.map(c=>`<th data-k="${c[0]}">${c[1]}${sortKey===c[0]?(sortDir<0?" ↓":" ↑"):""}</th>`).join("")+"</tr>";
-  h+=rows.map(a=>`<tr><td>${fmtDate(a._d)}</td><td class="name">${a.name||"–"}</td><td class="num r">${a.distance_km.toFixed(2)}</td><td class="num r">${fmtPace(a._pace)}</td><td class="num r">${fmtTime(a.moving_time_s)}</td><td class="num r">${a.avg_hr?Math.round(a.avg_hr):"–"}</td><td class="num r">${a.elevation_m?Math.round(a.elevation_m):"–"}</td><td class="num r">${a.kudos}</td></tr>`).join("");
+  h+=rows.map(a=>`<tr><td>${fmtDate(a._d)}</td><td class="name">${a.name||"–"}</td><td class="num r">${a.distance_km.toFixed(2)}</td><td class="num r">${fmtPace(a._pace)}</td><td class="num r">${fmtTime(a.moving_time_s)}</td><td class="num r">${a.elevation_m?Math.round(a.elevation_m):"–"}</td><td class="num r">${a.kudos}</td></tr>`).join("");
   const t=document.getElementById("logTable");t.innerHTML=h;
   t.querySelectorAll("th").forEach(th=>th.onclick=()=>{const k=th.dataset.k;if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=-1;}log();});
 }
