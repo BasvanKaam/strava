@@ -36,20 +36,38 @@ while True:
     activities.extend(batch)
     page += 1
 
-# Alleen de velden bewaren die het dashboard gebruikt
+# Alleen hardloopactiviteiten bewaren
+RUN_TYPES = {"Run", "TrailRun", "VirtualRun"}
+
 clean = []
 for a in activities:
+    sport = a.get("sport_type") or a.get("type")
+    if sport not in RUN_TYPES:
+        continue
+    m = a.get("map") or {}
     clean.append({
+        "id": a.get("id"),
         "name": a.get("name"),
-        "type": a.get("sport_type") or a.get("type"),
+        "type": sport,
         "date": a.get("start_date_local"),
-        "distance_km": round((a.get("distance") or 0) / 1000, 2),
+        "distance_km": round((a.get("distance") or 0) / 1000, 3),
         "moving_time_s": a.get("moving_time"),
+        "elapsed_time_s": a.get("elapsed_time"),
         "elevation_m": a.get("total_elevation_gain"),
         "avg_hr": a.get("average_heartrate"),
+        "max_hr": a.get("max_heartrate"),
+        "avg_speed": a.get("average_speed"),      # meter per seconde
+        "max_speed": a.get("max_speed"),
+        "avg_cadence": a.get("average_cadence"),  # voor runs: stappen per been per minuut
+        "kudos": a.get("kudos_count"),
+        "prs": a.get("pr_count"),
+        "achievements": a.get("achievement_count"),
+        "effort": a.get("suffer_score"),          # Relative Effort
+        "polyline": m.get("summary_polyline"),
+        "start_latlng": a.get("start_latlng"),
     })
 
 with open("activities.json", "w", encoding="utf-8") as f:
     json.dump(clean, f, ensure_ascii=False, indent=2)
 
-print(f"Klaar. {len(clean)} activiteiten opgeslagen.")
+print(f"Klaar. {len(clean)} hardloopactiviteiten opgeslagen.")
