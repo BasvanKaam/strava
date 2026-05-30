@@ -3,100 +3,579 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mijn Strava Dashboard</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<title>De Loopkrant</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,900;1,9..144,500;1,9..144,900&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+
 <style>
-  :root { --fc:#fc4c02; --bg:#f5f6f8; --card:#fff; --ink:#1a1a1a; --muted:#6b7280; }
-  * { box-sizing:border-box; margin:0; padding:0; }
-  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--bg); color:var(--ink); padding:24px; }
-  h1 { font-size:24px; margin-bottom:4px; }
-  .sub { color:var(--muted); margin-bottom:24px; font-size:14px; }
-  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:16px; margin-bottom:24px; }
-  .kpi { background:var(--card); border-radius:14px; padding:20px; box-shadow:0 1px 3px rgba(0,0,0,.06); }
-  .kpi .num { font-size:28px; font-weight:700; color:var(--fc); }
-  .kpi .lbl { color:var(--muted); font-size:13px; margin-top:4px; }
-  .grid { display:grid; grid-template-columns:2fr 1fr; gap:16px; margin-bottom:24px; }
-  .card { background:var(--card); border-radius:14px; padding:20px; box-shadow:0 1px 3px rgba(0,0,0,.06); }
-  .card h2 { font-size:15px; margin-bottom:16px; }
-  table { width:100%; border-collapse:collapse; font-size:14px; }
-  th,td { text-align:left; padding:10px 8px; border-bottom:1px solid #eee; }
-  th { color:var(--muted); font-weight:600; font-size:12px; text-transform:uppercase; }
-  td.r,th.r { text-align:right; }
-  @media(max-width:800px){ .grid{grid-template-columns:1fr;} }
+:root{
+  --paper:#f3ebdc; --paper-2:#ece1ce; --panel:#f7f1e6;
+  --ink:#211a12; --ink-soft:#6b5d49; --line:#22190f;
+  --orange:#fc4c02; --rust:#bb3f22; --mustard:#dca52c; --teal:#1f7a6d; --olive:#7c8a37; --gold:#c49a4f;
+  --shadow:6px 6px 0 var(--line);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{
+  font-family:"Archivo",sans-serif; color:var(--ink); background:var(--paper);
+  background-image:
+    radial-gradient(var(--line) 0.5px, transparent 0.6px);
+  background-size:4px 4px;
+  background-blend-mode:soft-light;
+  line-height:1.45; -webkit-font-smoothing:antialiased; padding-bottom:80px;
+}
+.mono{font-family:"Space Mono",monospace}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+
+/* ---------- MASTHEAD ---------- */
+.topbar{border-bottom:1px solid var(--line);background:var(--ink);color:var(--paper)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  font-family:"Space Mono",monospace;font-size:11px;letter-spacing:1.5px;text-transform:uppercase;padding:7px 20px}
+.topbar span{white-space:nowrap}
+.topbar .mid{opacity:.7}
+
+.masthead{text-align:center;padding:26px 20px 14px;border-bottom:3px double var(--line)}
+.masthead .kicker{font-family:"Space Mono",monospace;font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--rust)}
+.masthead h1{
+  font-family:"Fraunces",serif;font-weight:900;font-size:clamp(44px,11vw,104px);
+  line-height:.9;letter-spacing:-2px;margin:6px 0 4px;font-optical-sizing:auto;
+}
+.masthead h1 b{color:var(--orange);font-style:italic;font-weight:900}
+.masthead .tagline{font-family:"Fraunces",serif;font-style:italic;font-size:clamp(14px,2.4vw,19px);color:var(--ink-soft)}
+
+/* ---------- NAV ---------- */
+nav{position:sticky;top:0;z-index:50;background:var(--paper);border-bottom:1px solid var(--line);
+  box-shadow:0 2px 0 var(--line)}
+nav .wrap{display:flex;gap:0;overflow-x:auto;scrollbar-width:none}
+nav .wrap::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;background:none;border:none;border-right:1px solid var(--line);cursor:pointer;
+  font-family:"Space Mono",monospace;text-transform:uppercase;letter-spacing:2px;font-size:12px;
+  padding:14px 22px;color:var(--ink);transition:.15s}
+.tab:first-child{border-left:1px solid var(--line)}
+.tab:hover{background:var(--paper-2)}
+.tab.on{background:var(--orange);color:#fff}
+
+section.view{display:none;padding:34px 0 10px;animation:fade .3s ease}
+section.view.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+/* ---------- HEADINGS ---------- */
+.lede{font-family:"Fraunces",serif;font-weight:900;font-size:clamp(26px,4vw,40px);line-height:1;letter-spacing:-1px;margin-bottom:4px}
+.dek{font-family:"Fraunces",serif;font-style:italic;color:var(--ink-soft);margin-bottom:22px;font-size:16px}
+.rule{height:1px;background:var(--line);margin:28px 0}
+.sectitle{font-family:"Space Mono",monospace;text-transform:uppercase;letter-spacing:3px;font-size:12px;
+  color:var(--rust);border-bottom:1px solid var(--line);padding-bottom:6px;margin:30px 0 16px;display:flex;justify-content:space-between}
+
+/* ---------- KPI BAND ---------- */
+.kpis{display:grid;grid-template-columns:repeat(6,1fr);border:1px solid var(--line);background:var(--panel)}
+.kpi{padding:16px 14px;border-right:1px solid var(--line);text-align:center}
+.kpi:last-child{border-right:none}
+.kpi .n{font-family:"Space Mono",monospace;font-weight:700;font-size:clamp(20px,2.6vw,30px);line-height:1;color:var(--ink)}
+.kpi .n small{font-size:13px;color:var(--ink-soft);font-weight:400}
+.kpi .l{font-family:"Fraunces",serif;font-style:italic;font-size:12px;color:var(--ink-soft);margin-top:6px}
+.kpi:nth-child(1) .n{color:var(--orange)}
+.kpi:nth-child(3) .n{color:var(--teal)}
+.kpi:nth-child(5) .n{color:var(--olive)}
+
+/* ---------- PANELS GRID ---------- */
+.grid{display:grid;gap:18px}
+.g2{grid-template-columns:1fr 1fr}
+.g3{grid-template-columns:1fr 1fr 1fr}
+.card{border:1px solid var(--line);background:var(--panel);padding:18px;position:relative}
+.card.hard{box-shadow:var(--shadow)}
+.card h3{font-family:"Space Mono",monospace;text-transform:uppercase;letter-spacing:2px;font-size:12px;color:var(--rust);margin-bottom:14px}
+.chartbox{position:relative;height:230px}
+
+/* records strip */
+.rec{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line)}
+.rec div{padding:14px;border-right:1px solid var(--line);background:var(--panel)}
+.rec div:last-child{border-right:none}
+.rec .rn{font-family:"Space Mono",monospace;font-weight:700;font-size:22px;color:var(--orange)}
+.rec .rl{font-family:"Fraunces",serif;font-style:italic;font-size:12px;color:var(--ink-soft);margin-top:3px}
+
+/* goal + acwr */
+.goalhead{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.goalhead input{width:90px;font-family:"Space Mono",monospace;font-size:15px;border:1px solid var(--line);background:var(--paper);padding:4px 8px;color:var(--ink)}
+.bar{height:24px;border:1px solid var(--line);background:var(--paper);position:relative;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--orange)}
+.bar .proj{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--ink)}
+.barnote{font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft);margin-top:8px;display:flex;justify-content:space-between}
+
+.gauge{font-family:"Space Mono",monospace;text-align:center}
+.gauge .val{font-size:38px;font-weight:700;line-height:1}
+.gauge .zone{display:inline-block;margin-top:8px;padding:3px 10px;font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#fff;border:1px solid var(--line)}
+.zbar{display:flex;height:10px;margin:14px 0 6px;border:1px solid var(--line)}
+.zbar span{flex:1}
+.zlow{background:var(--mustard)}.zok{background:var(--olive)}.zhi{background:var(--rust)}
+
+/* race predictor */
+table.pred{width:100%;border-collapse:collapse;font-family:"Space Mono",monospace;font-size:13px}
+table.pred td{padding:9px 4px;border-bottom:1px solid var(--paper-2)}
+table.pred td:last-child{text-align:right;font-weight:700;color:var(--orange)}
+table.pred tr:last-child td{border-bottom:none}
+
+/* ---------- FEED ---------- */
+.feed{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.clip{border:1px solid var(--line);background:var(--panel);display:flex;flex-direction:column;box-shadow:var(--shadow)}
+.clip .sketch{height:150px;border-bottom:1px solid var(--line);background:var(--paper);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.clip .sketch svg{width:100%;height:100%}
+.clip .body{padding:16px}
+.clip .dateline{font-family:"Space Mono",monospace;font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--rust);margin-bottom:5px}
+.clip h4{font-family:"Fraunces",serif;font-weight:900;font-size:21px;line-height:1.05;letter-spacing:-.5px;margin-bottom:12px}
+.clip .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px 6px;font-family:"Space Mono",monospace}
+.clip .stats div .v{font-weight:700;font-size:16px}
+.clip .stats div .k{font-size:9.5px;text-transform:uppercase;letter-spacing:1px;color:var(--ink-soft)}
+.badges{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap}
+.badge{font-family:"Space Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:1px;padding:3px 7px;border:1px solid var(--line);background:var(--mustard)}
+.badge.pr{background:var(--orange);color:#fff}
+.badge.kudo{background:var(--paper)}
+.more{display:block;margin:24px auto 0;font-family:"Space Mono",monospace;text-transform:uppercase;letter-spacing:2px;font-size:12px;
+  border:1px solid var(--line);background:var(--paper);padding:12px 26px;cursor:pointer;box-shadow:var(--shadow)}
+.more:hover{background:var(--orange);color:#fff}
+
+/* ---------- MAP ---------- */
+#map{height:600px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.maplegend{font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-soft);margin-top:10px}
+
+/* ---------- AGENDA ---------- */
+.agnav{display:flex;align-items:center;justify-content:center;gap:20px;margin-bottom:18px}
+.agnav button{font-family:"Space Mono",monospace;border:1px solid var(--line);background:var(--paper);cursor:pointer;
+  width:38px;height:38px;font-size:18px;box-shadow:3px 3px 0 var(--line)}
+.agnav button:hover{background:var(--orange);color:#fff}
+.agnav h3{font-family:"Fraunces",serif;font-weight:900;font-size:26px;min-width:230px;text-align:center}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);border:1px solid var(--line);border-bottom:none}
+.cal .dow{font-family:"Space Mono",monospace;font-size:10px;text-transform:uppercase;letter-spacing:1px;text-align:center;
+  padding:8px 2px;background:var(--ink);color:var(--paper);border-right:1px solid #000}
+.cal .dow:nth-child(7){border-right:none}
+.cell{min-height:78px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:5px 6px;background:var(--panel);position:relative}
+.cell:nth-child(7n+7){border-right:none}
+.cell.empty{background:var(--paper-2)}
+.cell .dn{font-family:"Space Mono",monospace;font-size:11px;color:var(--ink-soft)}
+.cell.run{background:#fff}
+.cell .run-km{font-family:"Space Mono",monospace;font-weight:700;font-size:15px;color:var(--orange);margin-top:6px;line-height:1.1}
+.cell .run-km small{display:block;font-weight:400;font-size:9px;color:var(--ink-soft);letter-spacing:.5px}
+.cell .dot{position:absolute;top:7px;right:7px;width:8px;height:8px;border-radius:50%;background:var(--orange)}
+.agsum{font-family:"Space Mono",monospace;font-size:12px;color:var(--ink-soft);margin-top:12px;text-align:center}
+
+/* ---------- LOG TABLE ---------- */
+.logwrap{border:1px solid var(--line);overflow-x:auto;box-shadow:var(--shadow)}
+table.log{width:100%;border-collapse:collapse;font-family:"Space Mono",monospace;font-size:12.5px;min-width:760px;background:var(--panel)}
+table.log th{background:var(--ink);color:var(--paper);text-transform:uppercase;letter-spacing:1px;font-size:10.5px;
+  padding:10px 12px;text-align:left;cursor:pointer;white-space:nowrap;position:sticky;top:0}
+table.log th:hover{background:var(--rust)}
+table.log td{padding:9px 12px;border-bottom:1px solid var(--paper-2);white-space:nowrap}
+table.log td.name{font-family:"Fraunces",serif;font-style:italic;white-space:normal;min-width:160px}
+table.log tr:nth-child(even) td{background:var(--paper)}
+table.log td.r{text-align:right}
+
+.empty{border:1px dashed var(--line);padding:50px 20px;text-align:center;font-family:"Fraunces",serif;font-style:italic;font-size:18px;color:var(--ink-soft)}
+footer{text-align:center;font-family:"Space Mono",monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-soft);
+  border-top:3px double var(--line);margin-top:40px;padding:24px 20px}
+
+@media(max-width:860px){
+  .kpis{grid-template-columns:repeat(3,1fr)}
+  .kpi:nth-child(3){border-right:none}.kpi:nth-child(1),.kpi:nth-child(2),.kpi:nth-child(3){border-bottom:1px solid var(--line)}
+  .g2,.g3{grid-template-columns:1fr}
+  .feed{grid-template-columns:1fr}
+  .rec{grid-template-columns:1fr 1fr}.rec div:nth-child(2){border-right:none}.rec div:nth-child(1),.rec div:nth-child(2){border-bottom:1px solid var(--line)}
+  #map{height:420px}
+  .cell{min-height:58px}
+  .agnav h3{font-size:20px;min-width:150px}
+}
 </style>
 </head>
 <body>
-  <h1>Mijn Strava Dashboard</h1>
-  <div class="sub" id="updated">Laden...</div>
-  <div class="kpis" id="kpis"></div>
-  <div class="grid">
-    <div class="card"><h2>Kilometers per maand</h2><canvas id="monthChart"></canvas></div>
-    <div class="card"><h2>Activiteiten per type</h2><canvas id="typeChart"></canvas></div>
-  </div>
-  <div class="card">
-    <h2>Laatste activiteiten</h2>
-    <table>
-      <thead><tr>
-        <th>Datum</th><th>Naam</th><th>Type</th>
-        <th class="r">Afstand</th><th class="r">Tijd</th><th class="r">Tempo</th><th class="r">Hartslag</th>
-      </tr></thead>
-      <tbody id="rows"></tbody>
-    </table>
-  </div>
+
+<div class="topbar"><div class="wrap">
+  <span id="tbDate">—</span>
+  <span class="mid">Onafhankelijk hardlooporgaan</span>
+  <span id="tbEdition">Editie —</span>
+</div></div>
+
+<header class="masthead">
+  <div class="kicker">Opgericht 2026 · Prijs: één zweetdruppel</div>
+  <h1>De&nbsp;<b>Loop</b>krant</h1>
+  <div class="tagline">Alle kilometers die het nieuws halen</div>
+</header>
+
+<nav><div class="wrap" id="tabs">
+  <button class="tab on" data-t="overzicht">Overzicht</button>
+  <button class="tab" data-t="feed">Feed</button>
+  <button class="tab" data-t="kaart">Kaart</button>
+  <button class="tab" data-t="agenda">Agenda</button>
+  <button class="tab" data-t="logboek">Logboek</button>
+</div></nav>
+
+<main class="wrap">
+
+  <!-- OVERZICHT -->
+  <section class="view on" id="overzicht">
+    <div class="lede">De stand van zaken</div>
+    <div class="dek" id="ovSub">je hardloopjaar in cijfers</div>
+
+    <div class="kpis" id="kpis"></div>
+
+    <div class="sectitle">Records uit het archief</div>
+    <div class="rec" id="records"></div>
+
+    <div class="sectitle">Kilometers per maand</div>
+    <div class="card hard"><div class="chartbox"><canvas id="cMonth"></canvas></div></div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card hard">
+        <h3>Jaaroverzicht</h3>
+        <div class="chartbox"><canvas id="cYear"></canvas></div>
+      </div>
+      <div class="card hard">
+        <h3>Wanneer loop je?</h3>
+        <div class="chartbox"><canvas id="cHour"></canvas></div>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card hard">
+        <h3>Jaardoel</h3>
+        <div class="goalhead">
+          <div style="font-family:Fraunces;font-style:italic;color:var(--ink-soft)">Doel dit jaar (km)</div>
+          <input id="goalInput" class="mono" type="number" min="0" step="50">
+        </div>
+        <div class="bar"><i id="goalFill"></i><div class="proj" id="goalProj" title="verwacht eindtotaal"></div></div>
+        <div class="barnote"><span id="goalNow">—</span><span id="goalEnd">—</span></div>
+        <p style="font-family:Fraunces;font-style:italic;font-size:13px;color:var(--ink-soft);margin-top:12px" id="goalText"></p>
+      </div>
+      <div class="card hard">
+        <h3>Belastingmeter (ACWR)</h3>
+        <div class="gauge">
+          <div class="val" id="acwrVal">—</div>
+          <div class="zbar"><span class="zlow"></span><span class="zok"></span><span class="zhi"></span></div>
+          <div id="acwrZone" class="zone">—</div>
+        </div>
+        <p style="font-family:Fraunces;font-style:italic;font-size:13px;color:var(--ink-soft);margin-top:14px;text-align:center" id="acwrText"></p>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:18px">
+      <div class="card hard">
+        <h3>Racevoorspeller</h3>
+        <table class="pred" id="predTable"></table>
+        <p style="font-family:Fraunces;font-style:italic;font-size:12px;color:var(--ink-soft);margin-top:10px" id="predNote"></p>
+      </div>
+      <div class="card hard">
+        <h3>Tempo over de tijd</h3>
+        <div class="chartbox"><canvas id="cPace"></canvas></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEED -->
+  <section class="view" id="feed">
+    <div class="lede">De krantenknipsels</div>
+    <div class="dek">elke run een eigen verhaal</div>
+    <div class="feed" id="feedList"></div>
+    <button class="more" id="feedMore">Meer laden</button>
+  </section>
+
+  <!-- KAART -->
+  <section class="view" id="kaart">
+    <div class="lede">Het terrein</div>
+    <div class="dek">al je routes over elkaar, jouw persoonlijke heatmap</div>
+    <div id="map"></div>
+    <div class="maplegend" id="mapLegend">—</div>
+  </section>
+
+  <!-- AGENDA -->
+  <section class="view" id="agenda">
+    <div class="lede">De trainingsagenda</div>
+    <div class="dek">welke dagen kleurden oranje</div>
+    <div class="agnav">
+      <button id="agPrev">‹</button>
+      <h3 id="agTitle">—</h3>
+      <button id="agNext">›</button>
+    </div>
+    <div class="cal" id="cal"></div>
+    <div class="agsum" id="agSum"></div>
+  </section>
+
+  <!-- LOGBOEK -->
+  <section class="view" id="logboek">
+    <div class="lede">Het logboek</div>
+    <div class="dek">alles, tot op de seconde, klik een kop om te sorteren</div>
+    <div class="logwrap"><table class="log" id="logTable"></table></div>
+  </section>
+
+</main>
+
+<footer>De Loopkrant · gemaakt door Bas van Kaam · gevoed door Strava · <span id="ftCount">—</span></footer>
+
 <script>
-const FC = "#fc4c02";
-function fmtTime(s){ if(!s) return "-"; const h=Math.floor(s/3600), m=Math.floor((s%3600)/60); return h>0?`${h}u ${m}m`:`${m}m`; }
-function fmtPace(type,dist,secs){
-  if(!dist||!secs) return "-";
-  if(/run|walk|hike/i.test(type||"")){
-    const p=secs/60/dist, mm=Math.floor(p), ss=Math.round((p-mm)*60);
-    return `${mm}:${ss.toString().padStart(2,"0")} /km`;
+const O={orange:"#fc4c02",rust:"#bb3f22",mustard:"#dca52c",teal:"#1f7a6d",olive:"#7c8a37",ink:"#211a12",soft:"#6b5d49"};
+const MONTHS=["jan","feb","mrt","apr","mei","jun","jul","aug","sep","okt","nov","dec"];
+const MONTHS_L=["januari","februari","maart","april","mei","juni","juli","augustus","september","oktober","november","december"];
+let RUNS=[], goal=750, calMonth, mapInited=false, charts={};
+
+/* ---------- helpers ---------- */
+const pad=n=>String(n).padStart(2,"0");
+function paceSec(a){return (a.distance_km>0&&a.moving_time_s)? a.moving_time_s/a.distance_km : null;}
+function fmtPace(s){if(!s||!isFinite(s))return "–";const m=Math.floor(s/60),x=Math.round(s%60);return `${m}:${pad(x)}`;}
+function fmtTime(s){if(!s)return "–";const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),x=Math.floor(s%60);return h>0?`${h}:${pad(m)}:${pad(x)}`:`${m}:${pad(x)}`;}
+function fmtDate(d){return d?`${d.getDate()} ${MONTHS[d.getMonth()]} ${d.getFullYear()}`:"–";}
+function isoWeek(d){const t=new Date(Date.UTC(d.getFullYear(),d.getMonth(),d.getDate()));const day=(t.getUTCDay()+6)%7;t.setUTCDate(t.getUTCDate()-day+3);const f=new Date(Date.UTC(t.getUTCFullYear(),0,4));const w=1+Math.round(((t-f)/86400000-3+((f.getUTCDay()+6)%7))/7);return t.getUTCFullYear()+"-W"+pad(w);}
+function steps(a){return (a.avg_cadence&&a.moving_time_s)? Math.round(a.avg_cadence*2*(a.moving_time_s/60)) : 0;}
+
+/* polyline decode (Google encoded) */
+function decodePoly(str){if(!str)return[];let i=0,lat=0,lng=0,c=[];while(i<str.length){let b,sh=0,r=0;do{b=str.charCodeAt(i++)-63;r|=(b&0x1f)<<sh;sh+=5}while(b>=0x20);lat+=(r&1)?~(r>>1):(r>>1);sh=0;r=0;do{b=str.charCodeAt(i++)-63;r|=(b&0x1f)<<sh;sh+=5}while(b>=0x20);lng+=(r&1)?~(r>>1):(r>>1);c.push([lat/1e5,lng/1e5])}return c;}
+
+/* route -> svg sketch */
+function sketch(poly){
+  const pts=decodePoly(poly);
+  if(pts.length<2)return `<svg viewBox="0 0 100 60"><text x="50" y="33" text-anchor="middle" font-family="Space Mono" font-size="6" fill="${O.soft}">geen GPS</text><line x1="14" y1="42" x2="86" y2="42" stroke="${O.soft}" stroke-width="0.7" stroke-dasharray="3 3"/></svg>`;
+  let la=pts.map(p=>p[0]),lo=pts.map(p=>p[1]);
+  const laMin=Math.min(...la),laMax=Math.max(...la),loMin=Math.min(...lo),loMax=Math.max(...lo);
+  const w=200,h=130,pad=16;
+  const sx=(loMax-loMin)||1e-6, sy=(laMax-laMin)||1e-6;
+  const sc=Math.min((w-2*pad)/sx,(h-2*pad)/sy);
+  const ox=(w-sx*sc)/2, oy=(h-sy*sc)/2;
+  const d=pts.map((p,i)=>{const x=ox+(p[1]-loMin)*sc;const y=h-(oy+(p[0]-laMin)*sc);return (i?"L":"M")+x.toFixed(1)+" "+y.toFixed(1);}).join(" ");
+  const s=pts[0],e=pts[pts.length-1];
+  const sX=ox+(s[1]-loMin)*sc,sY=h-(oy+(s[0]-laMin)*sc),eX=ox+(e[1]-loMin)*sc,eY=h-(oy+(e[0]-laMin)*sc);
+  return `<svg viewBox="0 0 ${w} ${h}"><path d="${d}" fill="none" stroke="${O.orange}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/><circle cx="${sX.toFixed(1)}" cy="${sY.toFixed(1)}" r="3.4" fill="${O.teal}"/><circle cx="${eX.toFixed(1)}" cy="${eY.toFixed(1)}" r="3.4" fill="${O.ink}"/></svg>`;
+}
+
+/* ---------- boot ---------- */
+async function boot(){
+  const now=new Date();
+  document.getElementById("tbDate").textContent=now.toLocaleDateString("nl-NL",{weekday:"long",day:"numeric",month:"long",year:"numeric"});
+  document.getElementById("tbEdition").textContent="Editie "+now.getFullYear();
+  try{goal=parseInt(localStorage.getItem("loopkrant_goal"))||goal;}catch(e){}
+
+  try{
+    const r=await fetch("activities.json?t="+Date.now());
+    let data=await r.json();
+    RUNS=data.filter(a=>a&&a.date).map(a=>{a._d=new Date(a.date);return a;}).sort((a,b)=>b._d-a._d);
+  }catch(e){RUNS=[];}
+
+  if(!RUNS.length){
+    document.querySelectorAll("main .wrap, main").forEach(()=>{});
+    document.querySelectorAll("section.view").forEach(s=>{s.innerHTML='<div class="empty">Nog geen data gevonden. Heeft de GitHub Action al gedraaid en staat <b>activities.json</b> in je repo?</div>';});
+    return;
   }
-  return `${(dist/(secs/3600)).toFixed(1)} km/u`;
+  document.getElementById("ftCount").textContent=RUNS.length+" runs gearchiveerd";
+  renderKPIs(); renderRecords(); renderMonth(); renderYear(); renderHour(); renderGoal(); renderACWR(); renderPredictor(); renderPaceTrend();
+  renderFeed(); calMonth=new Date(RUNS[0]._d.getFullYear(),RUNS[0]._d.getMonth(),1); renderCal(); renderLog();
 }
-async function load(){
-  const res = await fetch("activities.json?t=" + Date.now());
-  const acts = await res.json();
-  acts.sort((a,b)=> new Date(b.date) - new Date(a.date));
 
-  const totalKm = acts.reduce((s,a)=>s+(a.distance_km||0),0);
-  const totalTime = acts.reduce((s,a)=>s+(a.moving_time_s||0),0);
-  const totalElev = acts.reduce((s,a)=>s+(a.elevation_m||0),0);
-  document.getElementById("kpis").innerHTML = `
-    <div class="kpi"><div class="num">${acts.length}</div><div class="lbl">Activiteiten</div></div>
-    <div class="kpi"><div class="num">${totalKm.toFixed(0)}</div><div class="lbl">Totaal km</div></div>
-    <div class="kpi"><div class="num">${(totalTime/3600).toFixed(0)}</div><div class="lbl">Uren bewogen</div></div>
-    <div class="kpi"><div class="num">${totalElev.toFixed(0)}</div><div class="lbl">Hoogtemeters</div></div>`;
-  document.getElementById("updated").textContent = "Laatst geladen: " + new Date().toLocaleString("nl-NL");
-
-  const byMonth = {};
-  acts.forEach(a=>{ if(!a.date) return; const d=new Date(a.date);
-    const k=d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0");
-    byMonth[k]=(byMonth[k]||0)+(a.distance_km||0); });
-  const months = Object.keys(byMonth).sort().slice(-12);
-  new Chart(document.getElementById("monthChart"),{ type:"bar",
-    data:{labels:months,datasets:[{data:months.map(m=>+byMonth[m].toFixed(1)),backgroundColor:FC}]},
-    options:{plugins:{legend:{display:false}},scales:{y:{beginAtZero:true}}}});
-
-  const byType = {};
-  acts.forEach(a=> byType[a.type||"Onbekend"]=(byType[a.type||"Onbekend"]||0)+1 );
-  new Chart(document.getElementById("typeChart"),{ type:"doughnut",
-    data:{labels:Object.keys(byType),datasets:[{data:Object.values(byType),
-      backgroundColor:["#fc4c02","#1e9db8","#8BC87A","#f59e0b","#6366f1","#ec4899","#94a3b8"]}]},
-    options:{plugins:{legend:{position:"bottom"}}}});
-
-  document.getElementById("rows").innerHTML = acts.slice(0,15).map(a=>`
-    <tr>
-      <td>${a.date?new Date(a.date).toLocaleDateString("nl-NL"):"-"}</td>
-      <td>${a.name||"-"}</td><td>${a.type||"-"}</td>
-      <td class="r">${(a.distance_km||0).toFixed(1)} km</td>
-      <td class="r">${fmtTime(a.moving_time_s)}</td>
-      <td class="r">${fmtPace(a.type,a.distance_km,a.moving_time_s)}</td>
-      <td class="r">${a.avg_hr?Math.round(a.avg_hr)+" bpm":"-"}</td>
-    </tr>`).join("");
+/* ---------- KPIs ---------- */
+function renderKPIs(){
+  const km=RUNS.reduce((s,a)=>s+(a.distance_km||0),0);
+  const t=RUNS.reduce((s,a)=>s+(a.moving_time_s||0),0);
+  const elev=RUNS.reduce((s,a)=>s+(a.elevation_m||0),0);
+  const st=RUNS.reduce((s,a)=>s+steps(a),0);
+  const paces=RUNS.map(paceSec).filter(Boolean);
+  const avgPace=paces.length?paces.reduce((s,x)=>s+x,0)/paces.length:null;
+  const tiles=[
+    [Math.round(km).toLocaleString("nl-NL"),"<small> km</small>","totaal gelopen"],
+    [RUNS.length,"","aantal runs"],
+    [Math.round(t/3600),"<small> u</small>","tijd onderweg"],
+    [fmtPace(avgPace),"<small> /km</small>","gemiddeld tempo"],
+    [st>0?Math.round(st/1000)+"<small>k</small>":"–","","geschatte stappen"],
+    [Math.round(elev).toLocaleString("nl-NL"),"<small> m</small>","hoogtemeters"]
+  ];
+  document.getElementById("kpis").innerHTML=tiles.map(t=>`<div class="kpi"><div class="n">${t[0]}${t[1]}</div><div class="l">${t[2]}</div></div>`).join("");
+  const yr=new Date().getFullYear();
+  const ytd=RUNS.filter(a=>a._d.getFullYear()===yr).reduce((s,a)=>s+a.distance_km,0);
+  document.getElementById("ovSub").textContent=`${Math.round(ytd)} km in ${yr} · ${RUNS.length} runs sinds ${RUNS[RUNS.length-1]._d.getFullYear()}`;
 }
-load().catch(()=>{ document.getElementById("updated").textContent =
-  "activities.json nog niet gevonden. Heeft de Action al een keer gedraaid?"; });
+
+/* ---------- records ---------- */
+function renderRecords(){
+  const longest=RUNS.reduce((m,a)=>a.distance_km>(m?.distance_km||0)?a:m,null);
+  const fast=RUNS.filter(a=>a.distance_km>=1).reduce((m,a)=>{const p=paceSec(a);return (p&&(!m||p<m.p))?{p,a}:m;},null);
+  const wk={}; RUNS.forEach(a=>{const k=isoWeek(a._d);wk[k]=(wk[k]||0)+a.distance_km;});
+  const bestWk=Math.max(...Object.values(wk));
+  const climb=RUNS.reduce((m,a)=>(a.elevation_m||0)>(m?.elevation_m||0)?a:m,null);
+  const recs=[
+    [longest?longest.distance_km.toFixed(1)+" km":"–","langste run"],
+    [fast?fmtPace(fast.p)+" /km":"–","snelste tempo"],
+    [Math.round(bestWk)+" km","beste week"],
+    [climb?Math.round(climb.elevation_m)+" m":"–","meeste klim"]
+  ];
+  document.getElementById("records").innerHTML=recs.map(r=>`<div><div class="rn">${r[0]}</div><div class="rl">${r[1]}</div></div>`).join("");
+}
+
+/* ---------- charts ---------- */
+const baseOpts={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+  scales:{x:{grid:{display:false},ticks:{font:{family:"Space Mono",size:10},color:O.soft}},
+          y:{grid:{color:"rgba(34,25,15,.08)"},ticks:{font:{family:"Space Mono",size:10},color:O.soft}}}};
+function mk(id,cfg){if(charts[id])charts[id].destroy();charts[id]=new Chart(document.getElementById(id),cfg);}
+
+function renderMonth(){
+  const m={}; RUNS.forEach(a=>{const k=a._d.getFullYear()+"-"+pad(a._d.getMonth());m[k]=(m[k]||0)+a.distance_km;});
+  const keys=Object.keys(m).sort().slice(-18);
+  mk("cMonth",{type:"bar",data:{labels:keys.map(k=>{const[y,mo]=k.split("-");return MONTHS[+mo]+" '"+y.slice(2);}),
+    datasets:[{data:keys.map(k=>+m[k].toFixed(1)),backgroundColor:O.orange,borderColor:O.ink,borderWidth:1}]},options:baseOpts});
+}
+function renderYear(){
+  const y={}; RUNS.forEach(a=>{const k=a._d.getFullYear();y[k]=(y[k]||0)+a.distance_km;});
+  const keys=Object.keys(y).sort();
+  mk("cYear",{type:"bar",data:{labels:keys,datasets:[{data:keys.map(k=>Math.round(y[k])),
+    backgroundColor:[O.teal,O.mustard,O.olive,O.rust,O.orange].slice(0,keys.length).reverse(),borderColor:O.ink,borderWidth:1}]},
+    options:{...baseOpts,indexAxis:"y"}});
+}
+function renderHour(){
+  const h=new Array(24).fill(0); RUNS.forEach(a=>h[a._d.getHours()]++);
+  mk("cHour",{type:"bar",data:{labels:h.map((_,i)=>i),datasets:[{data:h,backgroundColor:O.olive,borderColor:O.ink,borderWidth:1}]},
+    options:{...baseOpts,scales:{...baseOpts.scales,x:{...baseOpts.scales.x,ticks:{font:{family:"Space Mono",size:9},color:O.soft,callback:(v,i)=>i%3===0?i+"u":""}}}}});
+}
+function renderPaceTrend(){
+  const pts=[...RUNS].filter(a=>a.distance_km>=2&&paceSec(a)).reverse();
+  mk("cPace",{type:"line",data:{labels:pts.map(a=>fmtDate(a._d)),
+    datasets:[{data:pts.map(a=>+(paceSec(a)/60).toFixed(2)),borderColor:O.orange,backgroundColor:"rgba(252,76,2,.08)",
+      fill:true,tension:.25,pointRadius:0,borderWidth:2}]},
+    options:{...baseOpts,scales:{...baseOpts.scales,x:{...baseOpts.scales.x,ticks:{display:false}},
+      y:{...baseOpts.scales.y,reverse:true,ticks:{font:{family:"Space Mono",size:10},color:O.soft,callback:v=>{const m=Math.floor(v),s=Math.round((v-m)*60);return m+":"+pad(s);}}}}}});
+}
+
+/* ---------- goal ---------- */
+function renderGoal(){
+  const yr=new Date().getFullYear();
+  const ytd=RUNS.filter(a=>a._d.getFullYear()===yr).reduce((s,a)=>s+a.distance_km,0);
+  const start=new Date(yr,0,1), now=new Date(); const frac=Math.min(1,(now-start)/(new Date(yr+1,0,1)-start));
+  const proj=frac>0?ytd/frac:0;
+  const inp=document.getElementById("goalInput"); inp.value=goal;
+  inp.oninput=()=>{goal=parseInt(inp.value)||0;try{localStorage.setItem("loopkrant_goal",goal);}catch(e){}draw();};
+  function draw(){
+    document.getElementById("goalFill").style.width=Math.min(100,goal?ytd/goal*100:0)+"%";
+    document.getElementById("goalProj").style.left=Math.min(100,goal?proj/goal*100:0)+"%";
+    document.getElementById("goalNow").textContent=Math.round(ytd)+" km nu";
+    document.getElementById("goalEnd").textContent="doel "+goal+" km";
+    document.getElementById("goalText").textContent=`Op dit tempo eindig je rond de ${Math.round(proj)} km. `+
+      (proj>=goal?`Je ligt voor op schema.`:`Je mist het doel met ${Math.round(goal-proj)} km, tijd om aan te zetten.`);
+  }
+  draw();
+}
+
+/* ---------- ACWR ---------- */
+function renderACWR(){
+  const now=new Date(); const dAgo=n=>(now-n._d)/86400000;
+  const acute=RUNS.filter(a=>dAgo(a)<=7).reduce((s,a)=>s+a.distance_km,0);
+  const chronic=RUNS.filter(a=>dAgo(a)<=28).reduce((s,a)=>s+a.distance_km,0)/4;
+  const ratio=chronic>0?acute/chronic:0;
+  document.getElementById("acwrVal").textContent=chronic>0?ratio.toFixed(2):"–";
+  const z=document.getElementById("acwrZone"), txt=document.getElementById("acwrText");
+  if(chronic<=0){z.textContent="te weinig data";z.style.background=O.soft;txt.textContent="Loop een paar weken, dan kan ik je belasting volgen.";return;}
+  if(ratio<0.8){z.textContent="rustig";z.style.background=O.mustard;txt.textContent="Je bouwt af. Prima voor herstel, maar je kunt meer aan.";}
+  else if(ratio<=1.3){z.textContent="zoete zone";z.style.background=O.olive;txt.textContent="Gezonde opbouw. Deze week zit netjes in lijn met je gemiddelde.";}
+  else{z.textContent="opletten";z.style.background=O.rust;txt.textContent="Je doet flink meer dan normaal. Verhoogd blessurerisico, overweeg een rustige dag.";}
+}
+
+/* ---------- race predictor ---------- */
+function renderPredictor(){
+  const base=RUNS.filter(a=>a.distance_km>=3&&paceSec(a)).reduce((m,a)=>{const p=paceSec(a);return(!m||p<m.p)?{p,a}:m;},null);
+  const tb=document.getElementById("predTable");
+  if(!base){tb.innerHTML="<tr><td>Nog te weinig data</td></tr>";return;}
+  const d1=base.a.distance_km,t1=base.a.moving_time_s;
+  const races=[["5 km",5],["10 km",10],["halve marathon",21.0975],["marathon",42.195]];
+  tb.innerHTML=races.map(([n,d])=>{const t2=t1*Math.pow(d/d1,1.06);return `<tr><td>${n}</td><td>${fmtTime(t2)}</td></tr>`;}).join("");
+  document.getElementById("predNote").textContent=`Geschat op je beste run (${d1.toFixed(1)} km in ${fmtTime(t1)}) met de Riegel-formule. Indicatief, geen garantie.`;
+}
+
+/* ---------- feed ---------- */
+let feedN=8;
+function renderFeed(){
+  const list=document.getElementById("feedList");
+  list.innerHTML=RUNS.slice(0,feedN).map(a=>{
+    const p=paceSec(a),st=steps(a);
+    const badges=[];
+    if(a.prs>0)badges.push(`<span class="badge pr">${a.prs} PR</span>`);
+    if(a.achievements>0)badges.push(`<span class="badge">${a.achievements} prestaties</span>`);
+    if(a.kudos>0)badges.push(`<span class="badge kudo">♥ ${a.kudos}</span>`);
+    return `<article class="clip">
+      <div class="sketch">${sketch(a.polyline)}</div>
+      <div class="body">
+        <div class="dateline">${a._d.toLocaleDateString("nl-NL",{weekday:"long"})} · ${fmtDate(a._d)}</div>
+        <h4>${a.name||"Naamloze run"}</h4>
+        <div class="stats">
+          <div><div class="v">${a.distance_km.toFixed(2)}</div><div class="k">km</div></div>
+          <div><div class="v">${fmtPace(p)}</div><div class="k">tempo /km</div></div>
+          <div><div class="v">${fmtTime(a.moving_time_s)}</div><div class="k">tijd</div></div>
+          <div><div class="v">${a.avg_hr?Math.round(a.avg_hr):"–"}</div><div class="k">hartslag</div></div>
+          <div><div class="v">${a.elevation_m?Math.round(a.elevation_m):"–"}</div><div class="k">klim m</div></div>
+          <div><div class="v">${st?(st/1000).toFixed(1)+"k":"–"}</div><div class="k">stappen</div></div>
+        </div>
+        ${badges.length?`<div class="badges">${badges.join("")}</div>`:""}
+      </div></article>`;
+  }).join("");
+  document.getElementById("feedMore").style.display=feedN>=RUNS.length?"none":"block";
+}
+document.getElementById("feedMore").onclick=()=>{feedN+=8;renderFeed();};
+
+/* ---------- map ---------- */
+function initMap(){
+  if(mapInited)return; mapInited=true;
+  const map=L.map("map",{scrollWheelZoom:false});
+  L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",{attribution:"© OpenStreetMap © CARTO",subdomains:"abcd",maxZoom:19}).addTo(map);
+  let all=[],count=0;
+  RUNS.forEach(a=>{const pts=decodePoly(a.polyline);if(pts.length>1){L.polyline(pts,{color:O.orange,weight:2,opacity:.45}).addTo(map);all=all.concat(pts);count++;}});
+  if(all.length)map.fitBounds(L.latLngBounds(all).pad(0.1)); else map.setView([52.1,5.1],7);
+  document.getElementById("mapLegend").textContent=`${count} routes getekend · oranje = jouw paden`;
+  setTimeout(()=>map.invalidateSize(),200);
+}
+
+/* ---------- agenda ---------- */
+function renderCal(){
+  const y=calMonth.getFullYear(),mo=calMonth.getMonth();
+  document.getElementById("agTitle").textContent=MONTHS_L[mo]+" "+y;
+  const byDay={}; let mKm=0,mRuns=0;
+  RUNS.forEach(a=>{if(a._d.getFullYear()===y&&a._d.getMonth()===mo){const d=a._d.getDate();(byDay[d]=byDay[d]||[]).push(a);mKm+=a.distance_km;mRuns++;}});
+  const first=(new Date(y,mo,1).getDay()+6)%7, days=new Date(y,mo+1,0).getDate();
+  let html=["ma","di","wo","do","vr","za","zo"].map(d=>`<div class="dow">${d}</div>`).join("");
+  for(let i=0;i<first;i++)html+=`<div class="cell empty"></div>`;
+  for(let d=1;d<=days;d++){
+    const runs=byDay[d];
+    if(runs){const km=runs.reduce((s,a)=>s+a.distance_km,0);
+      html+=`<div class="cell run" title="${runs.map(r=>r.name).join(', ')}"><div class="dn">${d}</div><div class="dot"></div><div class="run-km">${km.toFixed(1)}<small>${runs.length>1?runs.length+" runs":"km"}</small></div></div>`;
+    } else html+=`<div class="cell"><div class="dn">${d}</div></div>`;
+  }
+  document.getElementById("cal").innerHTML=html;
+  document.getElementById("agSum").textContent=mRuns?`${mRuns} runs · ${mKm.toFixed(1)} km deze maand`:"Geen runs deze maand";
+}
+document.getElementById("agPrev").onclick=()=>{calMonth.setMonth(calMonth.getMonth()-1);renderCal();};
+document.getElementById("agNext").onclick=()=>{calMonth.setMonth(calMonth.getMonth()+1);renderCal();};
+
+/* ---------- log ---------- */
+let sortKey="_d",sortDir=-1;
+function renderLog(){
+  const cols=[["_d","Datum"],["name","Naam"],["distance_km","Afstand"],["_pace","Tempo"],["moving_time_s","Tijd"],["avg_hr","HS"],["elevation_m","Klim"],["_steps","Stappen"],["kudos","♥"]];
+  const rows=[...RUNS].map(a=>({...a,_pace:paceSec(a),_steps:steps(a)})).sort((x,y)=>{
+    let A=x[sortKey],B=y[sortKey];if(sortKey==="_d"){A=x._d;B=y._d;}A=A??-1;B=B??-1;return (A>B?1:A<B?-1:0)*sortDir;});
+  let h="<tr>"+cols.map(c=>`<th data-k="${c[0]}">${c[1]}${sortKey===c[0]?(sortDir<0?" ▾":" ▴"):""}</th>`).join("")+"</tr>";
+  h+=rows.map(a=>`<tr>
+    <td>${fmtDate(a._d)}</td><td class="name">${a.name||"–"}</td>
+    <td class="r">${a.distance_km.toFixed(2)}</td><td class="r">${fmtPace(a._pace)}</td>
+    <td class="r">${fmtTime(a.moving_time_s)}</td><td class="r">${a.avg_hr?Math.round(a.avg_hr):"–"}</td>
+    <td class="r">${a.elevation_m?Math.round(a.elevation_m):"–"}</td><td class="r">${a._steps?a._steps.toLocaleString("nl-NL"):"–"}</td>
+    <td class="r">${a.kudos||0}</td></tr>`).join("");
+  const t=document.getElementById("logTable"); t.innerHTML=h;
+  t.querySelectorAll("th").forEach(th=>th.onclick=()=>{const k=th.dataset.k;if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=-1;}renderLog();});
+}
+
+/* ---------- tabs ---------- */
+document.getElementById("tabs").addEventListener("click",e=>{
+  const b=e.target.closest(".tab"); if(!b)return;
+  document.querySelectorAll(".tab").forEach(t=>t.classList.remove("on")); b.classList.add("on");
+  document.querySelectorAll(".view").forEach(v=>v.classList.remove("on"));
+  document.getElementById(b.dataset.t).classList.add("on");
+  if(b.dataset.t==="kaart")initMap();
+  window.scrollTo({top:0,behavior:"smooth"});
+});
+
+boot();
 </script>
 </body>
 </html>
