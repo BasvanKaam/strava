@@ -154,6 +154,11 @@ table.pred tr:last-child td{border-bottom:none}
 .more:hover{border-color:var(--orange); color:var(--orange)}
 
 .logcard .pad{padding:0}
+.loghint{font-family:var(--cond); font-size:12.5px; color:var(--txt2); margin:-6px 0 16px; display:flex; align-items:center; gap:7px; font-weight:600; letter-spacing:.3px}
+.loghint i{color:var(--orange); font-size:16px}
+table.log th .ti{font-size:13px; vertical-align:-2px; margin-left:3px; color:var(--txt3)}
+table.log th.srt{color:var(--orange)}
+table.log th.srt .ti{color:var(--orange)}
 .logwrap{overflow-x:auto}
 table.log{width:100%; border-collapse:collapse; font-size:13px; min-width:680px}
 table.log th{background:var(--ink2); color:var(--txt2); text-transform:uppercase; letter-spacing:.6px; font-size:10.5px; padding:12px 14px; text-align:left; cursor:pointer; white-space:nowrap; position:sticky; top:0; font-weight:700; font-family:var(--cond)}
@@ -169,6 +174,8 @@ footer{position:relative; z-index:2; border-top:1px solid var(--line); margin-to
 .footsig{font-family:var(--disp); font-weight:900; font-size:24px; letter-spacing:-.5px; color:var(--txt)}
 .footsig .a{color:var(--orange)}
 .footline{font-family:var(--cond); font-size:12px; color:var(--txt3); margin-top:11px; font-weight:400; letter-spacing:.5px}
+.footrow{display:flex; justify-content:space-between; align-items:flex-end; gap:14px; flex-wrap:wrap}
+.footrow .footline{margin-top:0}
 
 .troph-head{display:flex;align-items:center;gap:20px;margin:8px 0 6px;flex-wrap:wrap}
 .troph-logo{width:84px;height:84px;border-radius:50%;object-fit:cover;border:2px solid var(--orange);background:var(--panel);flex:0 0 auto}
@@ -255,7 +262,7 @@ footer{position:relative; z-index:2; border-top:1px solid var(--line); margin-to
   <section class="view on" id="overview">
     <div class="issue" id="issue">Field notes from the road, built by night</div>
     <div class="hero">Every step on the <b>record.</b></div>
-    <div class="tagline">Some fast, most not. A few in the rain because the dog needed walking anyway. All of them counted.</div>
+    <div class="tagline">Some fast, most not. A few in weather no sane person picks. Every one of them ended up here.</div>
 
     <div class="card lead" id="leadStory" style="margin-top:26px">
       <div class="mini"><div style="background:#ff5a1f"></div><div style="background:#ffb02e"></div><div style="background:#c6ff3a"></div><div style="background:#34d2c0"></div></div>
@@ -321,12 +328,14 @@ footer{position:relative; z-index:2; border-top:1px solid var(--line); margin-to
 
   <section class="view" id="logbook">
     <div class="sectitle"><span class="tick"></span>The logbook</div>
+    <div class="loghint"><i class="ti ti-pointer"></i>Tap any column heading to sort. Tap again to flip the order.</div>
     <div class="card logcard"><div class="mini"><div style="background:#ff5a1f"></div><div style="background:#ffb02e"></div><div style="background:#c6ff3a"></div><div style="background:#34d2c0"></div></div><div class="pad"><div class="logwrap"><table class="log" id="logTable"></table></div></div></div>
   </section>
 </main>
 
-<footer><div class="wrap">
+<footer><div class="wrap footrow">
   <div class="footsig">Curated by Bas</div>
+  <div class="footline">Hosted on GitHub</div>
 </div></footer>
 
 <script>
@@ -567,7 +576,7 @@ document.getElementById("feedMore").onclick=()=>{feedN+=8;feed();};
 function log(){
   const cols=[["_d","Date"],["name","Name"],["distance_km","Distance"],["_pace","Pace"],["moving_time_s","Time"],["elevation_m","Climb"],["kudos","Kudos"]];
   const rows=RUNS.map(a=>({...a,_pace:runPace(a),kudos:ku(a)})).sort((x,y)=>{let A=sortKey==="_d"?x._d:x[sortKey],B=sortKey==="_d"?y._d:y[sortKey];A=A??-1;B=B??-1;return (A>B?1:A<B?-1:0)*sortDir;});
-  let h="<tr>"+cols.map(c=>`<th data-k="${c[0]}">${c[1]}${sortKey===c[0]?(sortDir<0?" ↓":" ↑"):""}</th>`).join("")+"</tr>";
+  let h="<tr>"+cols.map(c=>{const active=sortKey===c[0];const ar=active?(sortDir<0?'<i class="ti ti-arrow-down"></i>':'<i class="ti ti-arrow-up"></i>'):'<i class="ti ti-arrows-sort"></i>';return `<th data-k="${c[0]}" class="${active?'srt':''}">${c[1]} ${ar}</th>`;}).join("")+"</tr>";
   h+=rows.map(a=>`<tr><td>${fmtDate(a._d)}</td><td class="name">${a.name||"–"}</td><td class="num r">${a.distance_km.toFixed(2)}</td><td class="num r">${fmtPace(a._pace)}</td><td class="num r">${fmtTime(a.moving_time_s)}</td><td class="num r">${a.elevation_m?Math.round(a.elevation_m):"–"}</td><td class="num r">${a.kudos}</td></tr>`).join("");
   const t=document.getElementById("logTable");t.innerHTML=h;
   t.querySelectorAll("th").forEach(th=>th.onclick=()=>{const k=th.dataset.k;if(k===sortKey)sortDir*=-1;else{sortKey=k;sortDir=-1;}log();});
