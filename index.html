@@ -75,16 +75,15 @@ section.view.on{display:block; animation:fade .35s ease}
   font-size:14px; display:flex; gap:10px; align-items:center}
 .banner i{font-size:20px; color:var(--orange)}
 
-.stats{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:24px}
-.stat{background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:18px 16px; position:relative; overflow:hidden}
-.stat::before{content:""; position:absolute; top:0; left:0; bottom:0; width:4px}
-.stat:nth-child(1)::before{background:var(--orange)} .stat:nth-child(2)::before{background:var(--lime)}
-.stat:nth-child(3)::before{background:var(--teal)} .stat:nth-child(4)::before{background:var(--amber)}
-.stat-label{font-family:var(--cond); color:var(--txt3); font-size:11px; font-weight:700; letter-spacing:1px; margin-bottom:8px; text-transform:uppercase}
-.stat-value{font-family:var(--disp); font-weight:800; font-size:clamp(26px,4vw,38px); line-height:1; margin-bottom:6px; color:var(--txt)}
-.stat:nth-child(2) .stat-value{color:var(--lime)}
-.stat-value small{font-family:var(--cond); font-weight:700; color:var(--txt3); font-size:.4em; text-transform:uppercase; letter-spacing:.5px}
-.stat-sub{font-family:var(--cond); font-size:12px; color:var(--txt3); font-weight:400; text-transform:uppercase; letter-spacing:.5px}
+.stats{display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:24px; border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+.stat{--c:var(--orange); position:relative; overflow:hidden; padding:22px 22px; border-left:1px solid var(--line)}
+.stat:first-child{border-left:none}
+.stat1{--c:var(--orange)} .stat2{--c:var(--lime)} .stat3{--c:var(--teal)} .stat4{--c:var(--amber)}
+.stat-wm{position:absolute; right:-8px; bottom:-14px; font-size:96px; line-height:1; color:var(--c); opacity:.09; pointer-events:none}
+.stat-label{font-family:var(--cond); color:var(--txt3); font-size:11px; font-weight:700; letter-spacing:1px; margin-bottom:10px; text-transform:uppercase; position:relative}
+.stat-value{font-family:var(--disp); font-weight:800; font-size:clamp(28px,4.2vw,42px); line-height:1; margin-bottom:8px; color:var(--c); position:relative}
+.stat-value small{font-family:var(--cond); font-weight:700; color:var(--txt3); font-size:.36em; text-transform:uppercase; letter-spacing:.5px}
+.stat-sub{font-family:var(--cond); font-size:12px; color:var(--txt3); font-weight:400; text-transform:uppercase; letter-spacing:.5px; position:relative}
 
 .card{background:var(--panel); border:1px solid var(--line); border-radius:16px; overflow:hidden; color:var(--txt)}
 .card .mini{display:flex; height:4px} .card .mini div{flex:1}
@@ -217,7 +216,9 @@ footer{position:relative; z-index:2; border-top:1px solid var(--line); margin-to
 .tempty{font-size:14px;color:var(--txt3)}
 
 @media(max-width:900px){
-  .stats{grid-template-columns:1fr 1fr; gap:10px}
+  .stats{grid-template-columns:1fr 1fr; gap:0}
+  .stat:nth-child(odd){border-left:none}
+  .stat:nth-child(n+3){border-top:1px solid var(--line)}
   .g2,.g3{grid-template-columns:1fr}
   .feed{grid-template-columns:1fr}
   .rec{grid-template-columns:1fr 1fr; gap:10px}
@@ -245,7 +246,7 @@ footer{position:relative; z-index:2; border-top:1px solid var(--line); margin-to
   .footsig{font-size:21px}
 }
 @media(max-width:380px){
-  .stats{grid-template-columns:1fr 1fr; gap:8px}
+  .stats{grid-template-columns:1fr 1fr}
   .rec{grid-template-columns:1fr 1fr}
   .bibs{grid-template-columns:1fr 1fr}
   .hero{font-size:clamp(32px,12vw,44px)}
@@ -433,12 +434,26 @@ function lead(){
 function stats(){
   const km=RUNS.reduce((s,a)=>s+a.distance_km,0),t=RUNS.reduce((s,a)=>s+a.moving_time_s,0),kud=RUNS.reduce((s,a)=>s+ku(a),0);
   const tiles=[
-    [Math.round(km).toLocaleString("en-GB"),"km","total distance","since day one"],
-    [RUNS.length,"","total runs","and counting"],
-    [Math.round(t/3600),"h","hours on foot","legs in motion"],
-    [kudosKnown?kud.toLocaleString("en-GB"):"–","","kudos collected",kudosKnown?"applause from the stands":"run the latest fetch"]
+    {icon:"ti-route",       n:Math.round(km),    suf:"km", label:"total distance", sub:"since day one"},
+    {icon:"ti-run",         n:RUNS.length,       suf:"",   label:"total runs",     sub:"and counting"},
+    {icon:"ti-clock-hour-4",n:Math.round(t/3600),suf:"h",  label:"hours on foot",  sub:"legs in motion"},
+    {icon:"ti-heart",       n:kudosKnown?kud:null,suf:"",  label:"kudos collected",sub:kudosKnown?"applause from the stands":"run the latest fetch"}
   ];
-  document.getElementById("stats").innerHTML=tiles.map(t=>`<div class="stat"><div class="stat-label">${t[2]}</div><div class="stat-value">${t[0]}${t[1]?`<small> ${t[1]}</small>`:""}</div><div class="stat-sub">${t[3]}</div></div>`).join("");
+  document.getElementById("stats").innerHTML=tiles.map((t,i)=>`<div class="stat stat${i+1}">
+    <i class="ti ${t.icon} stat-wm" aria-hidden="true"></i>
+    <div class="stat-label">${t.label}</div>
+    <div class="stat-value"><span class="stat-num" data-target="${t.n===null?"":t.n}">${t.n===null?"–":"0"}</span>${t.suf?`<small> ${t.suf}</small>`:""}</div>
+    <div class="stat-sub">${t.sub}</div>
+  </div>`).join("");
+  document.querySelectorAll(".stat-num").forEach(el=>{
+    const target=el.dataset.target;
+    if(target===""){return;}
+    const end=+target,dur=1100,t0=performance.now();
+    const tick=now=>{const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);
+      el.textContent=Math.round(end*e).toLocaleString("en-GB");
+      if(p<1)requestAnimationFrame(tick);};
+    requestAnimationFrame(tick);
+  });
 }
 
 function records(){
