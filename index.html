@@ -340,11 +340,15 @@ footer{position:relative; z-index:2; border-top:2px solid rgba(122,58,28,.5); ma
    ============================================================ */
 const LOGO = "logo.png";        // drop logo.png in the repo root, or set "" to hide it
 const PERSONAL_BESTS = [
-  { label:"Fastest km",     value:"3:10",  note:"per kilometre" },
-  { label:"Fastest 100 m",  value:"12.6s", note:"flat out" },
-  // add more, for example:
-  // { label:"5 km",  value:"19:40", note:"park run" },
-  // { label:"10 km", value:"41:05", note:"road" },
+  { label:"Fastest 100 m", value:"12.6s",  note:"flat out" },
+  { label:"Fastest km",    value:"3:10",   note:"per kilometre" },
+  { label:"1 mile",        value:"5:58",   note:"all-time best" },
+  { label:"3000 m",        value:"11:58",  note:"all-time best" },
+  { label:"5 km",          value:"20:15",  note:"all-time best" },
+  { label:"10 km",         value:"41:22",  note:"all-time best" },
+  { label:"15 km",         value:"1:06:08", note:"all-time best" },
+  { label:"10 miles",      value:"1:12:14", note:"all-time best" },
+  { label:"Half marathon", value:"1:36:05", note:"all-time best" },
 ];
 const TROPHIES = [
   // { title:"Challenge name", note:"2025" },
@@ -511,8 +515,8 @@ function trophies(){
   head.innerHTML=`${LOGO?`<img class="troph-logo" src="${LOGO}" alt="logo" onerror="this.style.display='none'">`:""}<div class="troph-intro"><div class="th">The cabinet.</div>Medals, records and bragging rights, all in one drawer.</div>`;
 
   document.getElementById("pbMedals").innerHTML=PERSONAL_BESTS.length?PERSONAL_BESTS.map(p=>`
-    <div class="medal"><div class="rosette"><div class="disc"><span class="num">${p.value}</span></div><div class="tail"><span></span><span></span></div></div>
-    <div class="ml">${p.label}</div><div class="mn">${p.note||""}</div></div>`).join(""):`<div class="tempty">No personal bests set yet.</div>`;
+    <div class="medal"><div class="rosette"><div class="disc"><i class="ti ti-stopwatch"></i></div><div class="tail"><span></span><span></span></div></div>
+    <div class="mv">${p.value}</div><div class="ml">${p.label}</div><div class="mn">${p.note||""}</div></div>`).join(""):`<div class="tempty">No personal bests set yet.</div>`;
 
   const totalPR=RUNS.reduce((s,a)=>s+(a.prs||0),0);
   const totalAch=RUNS.reduce((s,a)=>s+(a.achievements||0),0);
