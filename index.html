@@ -411,9 +411,10 @@ async function boot(){
     document.querySelectorAll("section.view").forEach(s=>s.innerHTML='<div class="empty">No running data found yet. Did you add the new fetch_strava.py and re-run the GitHub Action?</div>');
     return;
   }
-  lead(); stats(); records(); chWeek(); chMonth(); chYear(); chPace(); chHour(); chKudos();
-  goalCard(); acwr(); feed(); years(); trophies();
+  lead(); stats(); records();
+  goalCard(); feed(); years(); trophies();
   log();
+  lazyCharts();
 }
 
 function lead(){
@@ -449,7 +450,7 @@ function stats(){
     const target=el.dataset.target;
     if(target===""||el.dataset.done==="1")return;
     el.dataset.done="1";
-    const end=+target,dur=2600,t0=performance.now();
+    const end=+target,dur=5200,t0=performance.now();
     const tick=now=>{const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);
       el.textContent=Math.round(end*e).toLocaleString("en-GB");
       if(p<1)requestAnimationFrame(tick);};
@@ -523,7 +524,21 @@ function years(){
 const tk={color:C.rust,font:{family:"Inter",size:11,weight:500}};
 const baseOpts={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:C.espresso,titleFont:{family:"Inter"},bodyFont:{family:"Inter"}}},
   scales:{x:{grid:{display:false},border:{display:false},ticks:tk},y:{grid:{color:"rgba(255,255,255,.08)"},border:{display:false},ticks:tk,beginAtZero:true}}};
-function mk(id,cfg){if(charts[id])charts[id].destroy();charts[id]=new Chart(document.getElementById(id),cfg);}
+function mk(id,cfg){
+  if(typeof Chart!=="undefined"&&Chart.defaults&&!mk._set){
+    Chart.defaults.animation={duration:2200,easing:"easeOutQuart"};
+    Chart.defaults.animations={y:{from:c=>c.chart.scales.y?.getPixelForValue(0)}};
+    mk._set=true;
+  }
+  if(charts[id])charts[id].destroy();charts[id]=new Chart(document.getElementById(id),cfg);}
+function lazyCharts(){
+  const map=[["cWeek",chWeek],["cMonth",chMonth],["cYear",chYear],["cPace",chPace],["cHour",chHour],["cKudos",chKudos],["cAcwr",acwr]];
+  if(!("IntersectionObserver" in window)){map.forEach(m=>m[1]());return;}
+  const io=new IntersectionObserver((ents,obs)=>{
+    ents.forEach(en=>{if(en.isIntersecting){if(en.target._build)en.target._build();obs.unobserve(en.target);}});
+  },{threshold:0.25});
+  map.forEach(m=>{const c=document.getElementById(m[0]);if(!c)return;const box=c.closest(".chartbox")||c;box._build=m[1];io.observe(box);});
+}
 const roundBar=(data,fill)=>({type:"bar",data,backgroundColor:fill,borderRadius:12,borderSkipped:false,maxBarThickness:34});
 
 function chWeek(){const w={};RUNS.forEach(a=>{const k=isoWeek(a._d);w[k]=(w[k]||0)+a.distance_km;});const keys=Object.keys(w).sort().slice(-14),vals=keys.map(k=>+w[k].toFixed(1));
