@@ -445,15 +445,25 @@ function stats(){
     <div class="stat-value"><span class="stat-num" data-target="${t.n===null?"":t.n}">${t.n===null?"–":"0"}</span>${t.suf?`<small> ${t.suf}</small>`:""}</div>
     <div class="stat-sub">${t.sub}</div>
   </div>`).join("");
-  document.querySelectorAll(".stat-num").forEach(el=>{
+  const runCount=el=>{
     const target=el.dataset.target;
-    if(target===""){return;}
-    const end=+target,dur=1100,t0=performance.now();
+    if(target===""||el.dataset.done==="1")return;
+    el.dataset.done="1";
+    const end=+target,dur=2600,t0=performance.now();
     const tick=now=>{const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);
       el.textContent=Math.round(end*e).toLocaleString("en-GB");
       if(p<1)requestAnimationFrame(tick);};
     requestAnimationFrame(tick);
-  });
+  };
+  const nums=document.querySelectorAll(".stat-num");
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver((ents,obs)=>{
+      ents.forEach(en=>{if(en.isIntersecting){setTimeout(()=>runCount(en.target),120);obs.unobserve(en.target);}});
+    },{threshold:0.4});
+    nums.forEach(el=>io.observe(el));
+  }else{
+    nums.forEach(el=>runCount(el));
+  }
 }
 
 function records(){
