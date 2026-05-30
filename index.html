@@ -450,7 +450,7 @@ function stats(){
     const target=el.dataset.target;
     if(target===""||el.dataset.done==="1")return;
     el.dataset.done="1";
-    const end=+target,dur=5200,t0=performance.now();
+    const end=+target,dur=9000,t0=performance.now();
     const tick=now=>{const p=Math.min(1,(now-t0)/dur),e=1-Math.pow(1-p,3);
       el.textContent=Math.round(end*e).toLocaleString("en-GB");
       if(p<1)requestAnimationFrame(tick);};
@@ -526,7 +526,7 @@ const baseOpts={responsive:true,maintainAspectRatio:false,plugins:{legend:{displ
   scales:{x:{grid:{display:false},border:{display:false},ticks:tk},y:{grid:{color:"rgba(255,255,255,.08)"},border:{display:false},ticks:tk,beginAtZero:true}}};
 function mk(id,cfg){
   if(typeof Chart!=="undefined"&&Chart.defaults&&!mk._set){
-    Chart.defaults.animation={duration:2200,easing:"easeOutQuart"};
+    Chart.defaults.animation={duration:4500,easing:"easeOutQuart"};
     Chart.defaults.animations={y:{from:c=>c.chart.scales.y?.getPixelForValue(0)}};
     mk._set=true;
   }
