@@ -254,8 +254,8 @@ footer{position:relative; z-index:2; border-top:1px solid var(--line); margin-to
 <main class="wrap">
   <section class="view on" id="overview">
     <div class="issue" id="issue">Field notes from the road, built by night</div>
-    <div class="hero">Every step<br>on the record.<br><b>No fluff.</b></div>
-    <div class="tagline">Every run, honestly counted. No noise, no bike data, just what the clock and the legs actually did.</div>
+    <div class="hero">Every step on the <b>record.</b></div>
+    <div class="tagline">Some fast, most not. A few in the rain because the dog needed walking anyway. All of them counted.</div>
 
     <div class="card lead" id="leadStory" style="margin-top:26px">
       <div class="mini"><div style="background:#ff5a1f"></div><div style="background:#ffb02e"></div><div style="background:#c6ff3a"></div><div style="background:#34d2c0"></div></div>
@@ -326,9 +326,7 @@ footer{position:relative; z-index:2; border-top:1px solid var(--line); margin-to
 </main>
 
 <footer><div class="wrap">
-  <div class="footsig">Curated by BvK. <span class="a">Run for nerds.</span></div>
-  <div class="footline" id="ftCount">…</div>
-  <div class="footline">Fed by Strava, hosted on GitHub Pages, made for legs that make headlines</div>
+  <div class="footsig">Curated by Bas</div>
 </div></footer>
 
 <script>
@@ -384,9 +382,8 @@ async function boot(){
 
   if(!RUNS.length){
     document.querySelectorAll("section.view").forEach(s=>s.innerHTML='<div class="empty">No running data found yet. Did you add the new fetch_strava.py and re-run the GitHub Action?</div>');
-    document.getElementById("ftCount").textContent=""; return;
+    return;
   }
-  document.getElementById("ftCount").textContent=RUNS.length+" runs in the archive";
   lead(); stats(); records(); chWeek(); chMonth(); chYear(); chPace(); chHour(); chKudos();
   goalCard(); acwr(); feed(); years(); trophies();
   log();
