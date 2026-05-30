@@ -273,6 +273,7 @@ footer{position:relative; z-index:2; border-top:1px solid var(--line); margin-to
 
     <div class="sectitle"><span class="tick"></span>Records from the archive</div>
     <div class="rec" id="records"></div>
+    <div class="rec" id="records2" style="margin-top:12px"></div>
 
     <div class="sectitle"><span class="tick"></span>Distance, tallied</div>
     <div class="grid g3">
@@ -426,17 +427,20 @@ function stats(){
 
 function records(){
   const longest=RUNS.reduce((m,a)=>a.distance_km>(m?.distance_km||0)?a:m,null);
-  const fast=VALID.filter(a=>a.distance_km>=1.5&&a.moving_time_s>=120).reduce((m,a)=>{const p=runPace(a);return(p&&(!m||p<m.p))?{p,a}:m;},null);
   const wk={}; RUNS.forEach(a=>{const k=isoWeek(a._d);wk[k]=(wk[k]||0)+a.distance_km;});
   const bestWk=Object.values(wk).length?Math.max(...Object.values(wk)):0;
   const topKudo=RUNS.reduce((m,a)=>ku(a)>(m?ku(m):-1)?a:m,null);
+  const pb=lab=>{const m=PERSONAL_BESTS.find(p=>p.label===lab);return m?m.value:"–";};
   const recs=[
     [longest?longest.distance_km.toFixed(1)+" km":"–","longest run"],
-    [fast?fmtPace(fast.p):"–","fastest pace /km"],
+    [pb("Fastest km"),"fastest pace /km"],
     [Math.round(bestWk)+" km","best week"],
     [kudosKnown&&topKudo?ku(topKudo):"–","most kudos, one run"]
   ];
   document.getElementById("records").innerHTML=recs.map(r=>`<div class="rcell"><div class="rn">${r[0]}</div><div class="rl">${r[1]}</div></div>`).join("");
+
+  const dist=[[pb("1 mile"),"fastest mile"],[pb("3000 m"),"fastest 3 km"],[pb("5 km"),"fastest 5 km"],[pb("10 km"),"fastest 10 km"]];
+  document.getElementById("records2").innerHTML=dist.map(r=>`<div class="rcell"><div class="rn">${r[0]}</div><div class="rl">${r[1]}</div></div>`).join("");
 }
 
 function years(){
