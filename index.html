@@ -121,16 +121,16 @@ section.view.on{display:block; animation:fade .35s ease}
 .rcell .rl{font-family:var(--cond); font-size:12px; color:var(--txt3); margin-top:9px; font-weight:600; text-transform:uppercase; letter-spacing:.5px}
 
 .bibs{display:grid; grid-template-columns:repeat(4,1fr); gap:12px; margin-top:12px}
-.bib{--c:var(--orange); background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:0 0 16px; text-align:center; overflow:hidden; position:relative}
-.bib::before{content:""; position:absolute; top:0; left:0; right:0; height:3px; background:var(--c)}
-.bib2{--c:var(--teal)} .bib3{--c:var(--lime)} .bib4{--c:var(--amber)}
-.bib-top{display:flex; align-items:center; justify-content:center; gap:10px; padding:13px 0 10px; border-bottom:1.5px dashed var(--line2); margin-bottom:13px}
-.bib-hole{width:9px; height:9px; border-radius:50%; background:var(--ink); box-shadow:inset 0 0 0 1.5px var(--line2)}
-.bib-no{font-family:var(--cond); font-weight:700; font-size:15px; letter-spacing:3px; color:var(--c); text-transform:uppercase}
-.bib-time{font-family:var(--disp); font-weight:800; font-size:27px; line-height:1; color:var(--txt)}
-.bib-ladder{height:5px; border-radius:999px; background:var(--ink2); margin:13px 16px 7px; overflow:hidden}
-.bib-ladder span{display:block; height:100%; border-radius:999px; background:var(--c)}
-.bib-pace{font-family:var(--cond); font-size:11px; font-weight:600; letter-spacing:.6px; text-transform:uppercase; color:var(--txt3)}
+.bib{--c:var(--orange); position:relative; background:#f4efe4; border-radius:11px; padding:16px 14px 14px; text-align:center; color:#16181d; box-shadow:0 10px 24px rgba(0,0,0,.34)}
+.bib::before,.bib::after{content:""; position:absolute; top:11px; width:11px; height:11px; border-radius:50%; background:var(--ink); box-shadow:inset 0 0 0 2px rgba(0,0,0,.28)}
+.bib::before{left:12px} .bib::after{right:12px}
+.bib2{--c:#1f9a8e} .bib3{--c:#6f9c1a} .bib4{--c:#e08a12}
+.bib-ev{font-family:var(--cond); font-weight:700; text-transform:uppercase; letter-spacing:2px; font-size:11px; color:var(--c)}
+.bib-no{font-family:var(--disp); font-weight:900; font-size:42px; line-height:.95; letter-spacing:-1.5px; margin:3px 0 9px; color:#16181d}
+.bib-perf{border-top:2px dashed #c9bfa8; margin:0 -14px 10px}
+.bib-pace{font-family:var(--cond); font-weight:700; text-transform:uppercase; letter-spacing:1px; font-size:11px; color:#8a3b1c}
+.bib-ladder{height:5px; border-radius:9px; background:#d9cfb6; margin:8px 6px 0; overflow:hidden}
+.bib-ladder span{display:block; height:100%; border-radius:9px; background:var(--c)}
 
 .goalhead{display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:14px}
 .goalhead span{font-family:var(--cond); color:var(--txt2); font-weight:600; text-transform:uppercase; font-size:12px; letter-spacing:.5px}
@@ -466,10 +466,11 @@ function records(){
     const fill=d.pace?Math.round(40+60*(slow-d.pace)/span):0;
     const paceTxt=d.pace?fmtPace(d.pace)+" /km":"–";
     return `<div class="bib bib${i+1}">
-      <div class="bib-top"><span class="bib-hole"></span><span class="bib-no">${d.bib}</span><span class="bib-hole"></span></div>
-      <div class="bib-time">${d.val}</div>
-      <div class="bib-ladder"><span style="width:${fill}%"></span></div>
+      <div class="bib-ev">${d.label.replace("fastest ","")}</div>
+      <div class="bib-no">${d.val}</div>
+      <div class="bib-perf"></div>
       <div class="bib-pace">${paceTxt}</div>
+      <div class="bib-ladder"><span style="width:${fill}%"></span></div>
     </div>`;
   }).join("");
 }
