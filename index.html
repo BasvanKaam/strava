@@ -434,11 +434,16 @@ function lead(){
 
 function stats(){
   const km=RUNS.reduce((s,a)=>s+a.distance_km,0),t=RUNS.reduce((s,a)=>s+a.moving_time_s,0),kud=RUNS.reduce((s,a)=>s+ku(a),0);
+  const days=Math.max(1,(RUNS[0]._d-RUNS[RUNS.length-1]._d)/864e5),weeks=days/7;
+  const earth=(km/40075).toFixed(2);
+  const perWeek=(RUNS.length/weeks).toFixed(1);
+  const fullDays=(t/3600/24).toFixed(1);
+  const perRun=RUNS.length?(kud/RUNS.length).toFixed(1):"0";
   const tiles=[
-    {icon:"ti-route",       n:Math.round(km),    suf:"km", label:"total distance", sub:"since day one"},
-    {icon:"ti-run",         n:RUNS.length,       suf:"",   label:"total runs",     sub:"and counting"},
-    {icon:"ti-clock-hour-4",n:Math.round(t/3600),suf:"h",  label:"hours on foot",  sub:"legs in motion"},
-    {icon:"ti-heart",       n:kudosKnown?kud:null,suf:"",  label:"kudos collected",sub:kudosKnown?"applause from the stands":"run the latest fetch"}
+    {icon:"ti-route",       n:Math.round(km),    suf:"km", label:"total distance", sub:`${earth}× around the Earth`},
+    {icon:"ti-run",         n:RUNS.length,       suf:"",   label:"total runs",     sub:`about ${perWeek} per week`},
+    {icon:"ti-clock-hour-4",n:Math.round(t/3600),suf:"h",  label:"hours on foot",  sub:`${fullDays} full days moving`},
+    {icon:"ti-heart",       n:kudosKnown?kud:null,suf:"",  label:"kudos collected",sub:kudosKnown?`${perRun} per run on average`:"run the latest fetch"}
   ];
   document.getElementById("stats").innerHTML=tiles.map((t,i)=>`<div class="stat stat${i+1}">
     <i class="ti ${t.icon} stat-wm" aria-hidden="true"></i>
@@ -664,7 +669,8 @@ document.getElementById("tabs").addEventListener("click",e=>{const b=e.target.cl
   document.querySelectorAll(".tab").forEach(t=>t.classList.remove("on"));b.classList.add("on");
   document.querySelectorAll(".view").forEach(v=>v.classList.remove("on"));
   document.getElementById(b.dataset.t).classList.add("on");
-  window.scrollTo({top:0,behavior:"smooth"});});
+  window.scrollTo({top:0,behavior:"smooth"});
+  if(b.dataset.t==="overview"&&RUNS.length){stats();lazyCharts();}});
 
 boot();
 </script>
