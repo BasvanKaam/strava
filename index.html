@@ -162,11 +162,11 @@ table.pred tr:last-child td{border-bottom:none}
 .cal-card .pad{padding:10px}
 .cal{display:grid; grid-template-columns:repeat(7,1fr); gap:6px}
 .dow{font-size:10px; text-transform:uppercase; letter-spacing:1px; text-align:center; padding:9px 2px; color:var(--rust); font-weight:700}
-.cell{min-height:74px; border-radius:12px; background:var(--cream2); padding:7px 8px; position:relative}
+.cell{aspect-ratio:1/1; min-height:0; border-radius:12px; background:var(--cream2); padding:7px 8px; position:relative; display:flex; flex-direction:column; overflow:hidden}
 .cell.empty{background:transparent}
 .cell .dn{font-size:11px; color:var(--rust); font-weight:600}
 .cell.run{background:#fff; box-shadow:inset 0 0 0 2px var(--terra)}
-.cell .km{font-family:var(--disp); font-size:15px; color:var(--terra); margin-top:7px; line-height:1.05}
+.cell .km{font-family:var(--disp); font-size:15px; color:var(--terra); margin-top:auto; line-height:1.05}
 .cell .km small{display:block; font-family:var(--body); font-size:10px; color:var(--rust); font-weight:400}
 .cell .dot{position:absolute; top:8px; right:8px; width:8px; height:8px; border-radius:50%; background:var(--coral)}
 .agsum{text-align:center; font-size:14px; color:var(--cream); opacity:.85; margin-top:16px; font-weight:400}
@@ -273,7 +273,7 @@ footer{position:relative; z-index:2; border-top:2px solid rgba(122,58,28,.5); ma
     <div class="sectitle"><span class="tick"></span>Form &amp; rhythm</div>
     <div class="grid g2">
       <div class="card"><div class="mini"><div style="background:#d8572b"></div><div style="background:#f0a830"></div><div style="background:#8a9a3c"></div><div style="background:#2f8a86"></div></div><div class="pad"><h3>Average pace per month</h3><div class="ck">lower is faster</div><div class="chartbox"><canvas id="cPace"></canvas></div></div></div>
-      <div class="card"><div class="mini"><div style="background:#d8572b"></div><div style="background:#f0a830"></div><div style="background:#8a9a3c"></div><div style="background:#2f8a86"></div></div><div class="pad"><h3>When do you run?</h3><div class="ck">runs by part of the day</div><div class="chartbox"><canvas id="cHour"></canvas></div></div></div>
+      <div class="card"><div class="mini"><div style="background:#d8572b"></div><div style="background:#f0a830"></div><div style="background:#8a9a3c"></div><div style="background:#2f8a86"></div></div><div class="pad"><h3>When do you run?</h3><div class="ck">runs per part of the day</div><div class="chartbox"><canvas id="cHour"></canvas></div></div></div>
     </div>
 
     <div class="grid g2">
@@ -474,10 +474,11 @@ function chYear(){const y={};RUNS.forEach(a=>{y[a._d.getFullYear()]=(y[a._d.getF
 function chPace(){const m={};VALID.forEach(a=>{const k=a._d.getFullYear()+"-"+pad(a._d.getMonth());(m[k]=m[k]||[]).push(a);});const keys=Object.keys(m).sort().slice(-12);const vals=keys.map(k=>{const p=wPace(m[k]);return p?+(p/60).toFixed(2):null;});
   mk("cPace",{type:"line",data:{labels:keys.map(k=>{const[y,mo]=k.split("-");return MO[+mo];}),datasets:[{data:vals,borderColor:C.terra,backgroundColor:grad("cPace","rgba(216,87,43,.28)","rgba(216,87,43,0)"),fill:true,tension:.45,pointRadius:5,pointBackgroundColor:C.cream,pointBorderColor:C.terra,pointBorderWidth:2,borderWidth:3,borderCapStyle:"round",spanGaps:true}]},
     options:{...baseOpts,scales:{x:{grid:{display:false},border:{display:false},ticks:tk},y:{grid:{color:"rgba(122,58,28,.1)"},border:{display:false},reverse:true,ticks:{color:C.rust,font:{family:"Fredoka",size:11},callback:v=>{const mm=Math.floor(v),s=Math.round((v-mm)*60);return mm+":"+pad(s);}}}}}});}
-function chHour(){const buckets=[0,0,0,0,0,0];const lab=["00–04","04–08","08–12","12–16","16–20","20–24"];RUNS.forEach(a=>buckets[Math.floor(a._d.getHours()/4)]++);
-  const cols=[C.teal,C.avocado,C.amber,C.terra,C.coral,C.maroon];
-  mk("cHour",{type:"polarArea",data:{labels:lab,datasets:[{data:buckets,backgroundColor:cols.map(c=>c+"cc"),borderColor:C.cream,borderWidth:2}]},
-    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:"right",labels:{color:C.rust,font:{family:"Fredoka",size:10.5},boxWidth:10,boxHeight:10,usePointStyle:true,pointStyle:"circle",padding:8}},tooltip:{backgroundColor:C.espresso,callbacks:{label:c=>c.label+": "+c.raw+" runs"}}},scales:{r:{grid:{color:"rgba(122,58,28,.14)"},ticks:{display:false},angleLines:{color:"rgba(122,58,28,.12)"}}}}});}
+function chHour(){const buckets=[0,0,0,0,0,0];const lab=["Early morning","Morning","Midday","Afternoon","Evening","Night"];const cols=[C.amber,C.terra,C.avocado,C.teal,C.coral,C.maroon];RUNS.forEach(a=>{const h=a._d.getHours();const i=h<6?5:h<9?0:h<12?1:h<14?2:h<18?3:h<22?4:5;buckets[i]++;});
+  const order=[0,1,2,3,4,5];
+  mk("cHour",{type:"bar",data:{labels:order.map(i=>lab[i]),datasets:[{data:order.map(i=>buckets[i]),backgroundColor:order.map(i=>cols[i]),borderRadius:10,borderSkipped:false,maxBarThickness:26}]},
+    options:{indexAxis:"y",responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{backgroundColor:C.espresso,titleFont:{family:"Fredoka"},bodyFont:{family:"Fredoka"},callbacks:{label:c=>c.raw+" runs"}}},
+      scales:{x:{grid:{color:"rgba(122,58,28,.1)"},border:{display:false},ticks:{color:C.rust,font:{family:"Fredoka",size:11},precision:0,beginAtZero:true}},y:{grid:{display:false},border:{display:false},ticks:{color:C.rust,font:{family:"Fredoka",size:11.5}}}}}});}
 function chKudos(){const m={};RUNS.forEach(a=>{const k=a._d.getFullYear()+"-"+pad(a._d.getMonth());m[k]=(m[k]||0)+ku(a);});const keys=Object.keys(m).sort().slice(-12),vals=keys.map(k=>m[k]);
   mk("cKudos",{type:"bar",data:{labels:keys.map(k=>{const[y,mo]=k.split("-");return MO[+mo];}),datasets:[{data:vals,backgroundColor:grad("cKudos",C.coral,C.amber),borderRadius:12,borderSkipped:false,maxBarThickness:30}]},options:baseOpts});
   const tot=RUNS.reduce((s,a)=>s+ku(a),0);
