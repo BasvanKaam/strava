@@ -2,7 +2,7 @@ name: Update Strava data
 
 on:
   schedule:
-    - cron: "0 */3 * * *"     # elke 3 uur
+    - cron: "0 * * * *"        # elk uur
   workflow_dispatch:           # geeft je ook een knop om het zelf te starten
 
 permissions:
