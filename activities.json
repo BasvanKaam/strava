@@ -1,7 +1,22 @@
 [
   {
+    "id": 18727486635,
+    "name": "Brunch ☀️",
+    "type": "Run",
+    "date": "2026-05-31T11:55:05Z",
+    "distance_km": 5.044,
+    "moving_time_s": 3760,
+    "elapsed_time_s": 5043,
+    "elevation_m": 15.0,
+    "avg_hr": 75.9,
+    "max_hr": 88.0,
+    "kudos": 5,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 18699576311,
-    "name": "Ochtendloop",
+    "name": "Breakfast ❤️",
     "type": "Run",
     "date": "2026-05-29T09:49:14Z",
     "distance_km": 4.245,
@@ -10,7 +25,7 @@
     "elevation_m": 8.0,
     "avg_hr": 81.7,
     "max_hr": 117.0,
-    "kudos": 0,
+    "kudos": 1,
     "prs": 0,
     "achievements": 0
   },
