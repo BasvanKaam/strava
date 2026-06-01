@@ -1,5 +1,20 @@
 [
   {
+    "id": 18739236298,
+    "name": "Getting lunch  🥩",
+    "type": "Run",
+    "date": "2026-06-01T10:40:44Z",
+    "distance_km": 5.047,
+    "moving_time_s": 3240,
+    "elapsed_time_s": 3612,
+    "elevation_m": 10.0,
+    "avg_hr": 96.3,
+    "max_hr": 122.0,
+    "kudos": 2,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 18730707737,
     "name": "Easy rwr ☀️ Weather is getting a bit better.",
     "type": "Run",
