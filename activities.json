@@ -1,5 +1,20 @@
 [
   {
+    "id": 18757018002,
+    "name": "Medium intervals 💪 Bit fresher, but better.",
+    "type": "Run",
+    "date": "2026-06-02T16:46:21Z",
+    "distance_km": 5.347,
+    "moving_time_s": 1766,
+    "elapsed_time_s": 1799,
+    "elevation_m": 12.0,
+    "avg_hr": 155.3,
+    "max_hr": 183.0,
+    "kudos": 9,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 18753383045,
     "name": "Middagloop",
     "type": "Run",
@@ -40,7 +55,7 @@
     "elevation_m": 47.0,
     "avg_hr": 152.7,
     "max_hr": 176.0,
-    "kudos": 15,
+    "kudos": 16,
     "prs": 1,
     "achievements": 1
   },
@@ -55,7 +70,7 @@
     "elevation_m": 15.0,
     "avg_hr": 75.9,
     "max_hr": 88.0,
-    "kudos": 11,
+    "kudos": 12,
     "prs": 0,
     "achievements": 0
   },
@@ -70,7 +85,7 @@
     "elevation_m": 8.0,
     "avg_hr": 81.7,
     "max_hr": 117.0,
-    "kudos": 1,
+    "kudos": 2,
     "prs": 0,
     "achievements": 0
   },
