@@ -1,5 +1,20 @@
 [
   {
+    "id": 18771683757,
+    "name": "Watching my son play ⚽",
+    "type": "Run",
+    "date": "2026-06-03T17:17:08Z",
+    "distance_km": 3.057,
+    "moving_time_s": 1929,
+    "elapsed_time_s": 2274,
+    "elevation_m": 11.0,
+    "avg_hr": 87.1,
+    "max_hr": 111.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 18769713487,
     "name": "Namiddagloop",
     "type": "Run",
@@ -25,7 +40,7 @@
     "elevation_m": 12.0,
     "avg_hr": 155.3,
     "max_hr": 183.0,
-    "kudos": 12,
+    "kudos": 13,
     "prs": 0,
     "achievements": 0
   },
