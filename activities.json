@@ -1,5 +1,20 @@
 [
   {
+    "id": 18769713487,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-06-03T13:35:09Z",
+    "distance_km": 4.202,
+    "moving_time_s": 2913,
+    "elapsed_time_s": 3162,
+    "elevation_m": 51.0,
+    "avg_hr": 80.6,
+    "max_hr": 96.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 18757018002,
     "name": "Medium intervals 💪 Bit fresher, but better.",
     "type": "Run",
@@ -55,7 +70,7 @@
     "elevation_m": 47.0,
     "avg_hr": 152.7,
     "max_hr": 176.0,
-    "kudos": 16,
+    "kudos": 17,
     "prs": 1,
     "achievements": 1
   },
