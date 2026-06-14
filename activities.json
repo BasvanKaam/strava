@@ -1,5 +1,20 @@
 [
   {
+    "id": 18916625824,
+    "name": "Afternoon snack.",
+    "type": "Run",
+    "date": "2026-06-14T12:50:35Z",
+    "distance_km": 5.126,
+    "moving_time_s": 3778,
+    "elapsed_time_s": 5841,
+    "elevation_m": 28.0,
+    "avg_hr": 89.1,
+    "max_hr": 129.0,
+    "kudos": 4,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 18890553297,
     "name": "Namiddagloop",
     "type": "Run",
@@ -16,7 +31,7 @@
   },
   {
     "id": 18847193072,
-    "name": "Ochtendloop",
+    "name": "Morning walk.",
     "type": "Run",
     "date": "2026-06-09T08:54:55Z",
     "distance_km": 6.223,
