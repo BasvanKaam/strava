@@ -1,5 +1,20 @@
 [
   {
+    "id": 18961062375,
+    "name": "Avondloop",
+    "type": "Run",
+    "date": "2026-06-17T18:01:30Z",
+    "distance_km": 6.764,
+    "moving_time_s": 5582,
+    "elapsed_time_s": 5813,
+    "elevation_m": 25.0,
+    "avg_hr": 76.2,
+    "max_hr": 95.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 1
+  },
+  {
     "id": 18954857490,
     "name": "Ochtendloop",
     "type": "Run",
