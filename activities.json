@@ -1,7 +1,22 @@
 [
   {
+    "id": 18968421355,
+    "name": "Wife gym pick up + breakfast 🥵",
+    "type": "Run",
+    "date": "2026-06-18T09:07:22Z",
+    "distance_km": 6.244,
+    "moving_time_s": 4416,
+    "elapsed_time_s": 5568,
+    "elevation_m": 8.0,
+    "avg_hr": 72.5,
+    "max_hr": 86.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 18961062375,
-    "name": "Avondloop",
+    "name": "Avondvierdaagse #2",
     "type": "Run",
     "date": "2026-06-17T18:01:30Z",
     "distance_km": 6.764,
