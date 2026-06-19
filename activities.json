@@ -1,5 +1,20 @@
 [
   {
+    "id": 18981893009,
+    "name": "Middagloop",
+    "type": "Run",
+    "date": "2026-06-19T11:04:46Z",
+    "distance_km": 2.42,
+    "moving_time_s": 1786,
+    "elapsed_time_s": 1987,
+    "elevation_m": 7.0,
+    "avg_hr": 72.5,
+    "max_hr": 85.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 18968421355,
     "name": "Wife gym pick up + breakfast 🥵",
     "type": "Run",
