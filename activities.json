@@ -1,5 +1,20 @@
 [
   {
+    "id": 19019315824,
+    "name": "Breakfast pick up ☀️",
+    "type": "Run",
+    "date": "2026-06-22T09:08:42Z",
+    "distance_km": 5.501,
+    "moving_time_s": 3818,
+    "elapsed_time_s": 4403,
+    "elevation_m": 14.0,
+    "avg_hr": 77.0,
+    "max_hr": 122.0,
+    "kudos": 2,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19009390038,
     "name": "Afternoon walk 🥵",
     "type": "Run",
