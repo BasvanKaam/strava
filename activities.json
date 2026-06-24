@@ -1,5 +1,20 @@
 [
   {
+    "id": 19050136737,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-06-24T16:18:43Z",
+    "distance_km": 5.03,
+    "moving_time_s": 1822,
+    "elapsed_time_s": 1828,
+    "elevation_m": 6.0,
+    "avg_hr": 153.1,
+    "max_hr": 179.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19047287847,
     "name": "School pick up 🥵",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 5.0,
     "avg_hr": 75.8,
     "max_hr": 90.0,
-    "kudos": 5,
+    "kudos": 9,
     "prs": 0,
     "achievements": 0
   },
