@@ -1,5 +1,20 @@
 [
   {
+    "id": 19047287847,
+    "name": "School pick up 🥵",
+    "type": "Run",
+    "date": "2026-06-24T12:00:23Z",
+    "distance_km": 2.679,
+    "moving_time_s": 1779,
+    "elapsed_time_s": 2134,
+    "elevation_m": 5.0,
+    "avg_hr": 75.8,
+    "max_hr": 90.0,
+    "kudos": 5,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19019315824,
     "name": "Breakfast pick up ☀️",
     "type": "Run",
