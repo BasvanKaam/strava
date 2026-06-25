@@ -1,5 +1,20 @@
 [
   {
+    "id": 19062831625,
+    "name": "Doing nothing is a choice as well 😅",
+    "type": "Run",
+    "date": "2026-06-25T16:24:45Z",
+    "distance_km": 3.245,
+    "moving_time_s": 2332,
+    "elapsed_time_s": 2436,
+    "elevation_m": 15.0,
+    "avg_hr": 78.8,
+    "max_hr": 99.0,
+    "kudos": 1,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19050136737,
     "name": "Summary : 🥵🥵🥵🥵🥵🥵",
     "type": "Run",
