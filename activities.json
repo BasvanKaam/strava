@@ -1,5 +1,20 @@
 [
   {
+    "id": 19111964243,
+    "name": "Run Walk Run ☀️",
+    "type": "Run",
+    "date": "2026-06-29T17:15:50Z",
+    "distance_km": 6.35,
+    "moving_time_s": 2159,
+    "elapsed_time_s": 2182,
+    "elevation_m": 16.0,
+    "avg_hr": 152.2,
+    "max_hr": 178.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19096877291,
     "name": "Fam. Lunch. ☀️",
     "type": "Run",
@@ -25,7 +40,7 @@
     "elevation_m": 14.0,
     "avg_hr": 162.4,
     "max_hr": 186.0,
-    "kudos": 15,
+    "kudos": 16,
     "prs": 0,
     "achievements": 0
   },
@@ -55,7 +70,7 @@
     "elevation_m": 6.0,
     "avg_hr": 153.1,
     "max_hr": 179.0,
-    "kudos": 13,
+    "kudos": 14,
     "prs": 0,
     "achievements": 0
   },
