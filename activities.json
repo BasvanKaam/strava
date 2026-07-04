@@ -1,7 +1,22 @@
 [
   {
+    "id": 19176511899,
+    "name": "Afternoon walk 👌",
+    "type": "Run",
+    "date": "2026-07-04T13:36:07Z",
+    "distance_km": 7.132,
+    "moving_time_s": 5102,
+    "elapsed_time_s": 6799,
+    "elevation_m": 32.0,
+    "avg_hr": 75.2,
+    "max_hr": 110.0,
+    "kudos": 1,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19138195271,
-    "name": "Namiddagloop",
+    "name": "Afternoon walk.",
     "type": "Run",
     "date": "2026-07-01T15:34:24Z",
     "distance_km": 5.272,
