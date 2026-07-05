@@ -1,5 +1,20 @@
 [
   {
+    "id": 19188031185,
+    "name": "Middagloop",
+    "type": "Run",
+    "date": "2026-07-05T12:06:17Z",
+    "distance_km": 3.767,
+    "moving_time_s": 3018,
+    "elapsed_time_s": 3324,
+    "elevation_m": 14.0,
+    "avg_hr": 69.5,
+    "max_hr": 88.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19176511899,
     "name": "Afternoon walk 👌",
     "type": "Run",
@@ -25,7 +40,7 @@
     "elevation_m": 10.0,
     "avg_hr": 80.7,
     "max_hr": 98.0,
-    "kudos": 0,
+    "kudos": 1,
     "prs": 0,
     "achievements": 0
   },
