@@ -1,7 +1,22 @@
 [
   {
+    "id": 19190402888,
+    "name": "90+ Min. Snooker training ✅ 3.5 K walk with my ❤️ ✅ 12 K easy run ✅ 💪",
+    "type": "Run",
+    "date": "2026-07-05T15:17:36Z",
+    "distance_km": 12.014,
+    "moving_time_s": 4116,
+    "elapsed_time_s": 4221,
+    "elevation_m": 45.0,
+    "avg_hr": 153.7,
+    "max_hr": 184.0,
+    "kudos": 3,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19188031185,
-    "name": "Middagloop",
+    "name": "Afternoon walk.",
     "type": "Run",
     "date": "2026-07-05T12:06:17Z",
     "distance_km": 3.767,
@@ -10,7 +25,7 @@
     "elevation_m": 14.0,
     "avg_hr": 69.5,
     "max_hr": 88.0,
-    "kudos": 0,
+    "kudos": 2,
     "prs": 0,
     "achievements": 0
   },
