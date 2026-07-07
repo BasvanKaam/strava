@@ -1,5 +1,20 @@
 [
   {
+    "id": 19215659872,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-07-07T16:12:35Z",
+    "distance_km": 3.224,
+    "moving_time_s": 2241,
+    "elapsed_time_s": 2345,
+    "elevation_m": 19.0,
+    "avg_hr": 74.4,
+    "max_hr": 89.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19190402888,
     "name": "90+ Min. Snooker training ✅ 3.5 K walk with my ❤️ ✅ 12 K easy run ✅ 💪",
     "type": "Run",
