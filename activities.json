@@ -1,5 +1,20 @@
 [
   {
+    "id": 19230380755,
+    "name": "Easy 10K. Felt really good 👌 Nice surge near the end.",
+    "type": "Run",
+    "date": "2026-07-08T16:34:24Z",
+    "distance_km": 10.221,
+    "moving_time_s": 3536,
+    "elapsed_time_s": 3536,
+    "elevation_m": 17.0,
+    "avg_hr": 152.6,
+    "max_hr": 188.0,
+    "kudos": 4,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19215659872,
     "name": "Namiddagloop",
     "type": "Run",
