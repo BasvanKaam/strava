@@ -1,7 +1,7 @@
 [
   {
     "id": 19252665872,
-    "name": "Ochtendloop",
+    "name": "Getting breakfast ☀️",
     "type": "Run",
     "date": "2026-07-10T09:08:19Z",
     "distance_km": 3.059,
@@ -10,7 +10,7 @@
     "elevation_m": 6.0,
     "avg_hr": 76.7,
     "max_hr": 96.0,
-    "kudos": 0,
+    "kudos": 7,
     "prs": 0,
     "achievements": 0
   },
