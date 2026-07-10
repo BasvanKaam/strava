@@ -1,5 +1,20 @@
 [
   {
+    "id": 19252665872,
+    "name": "Ochtendloop",
+    "type": "Run",
+    "date": "2026-07-10T09:08:19Z",
+    "distance_km": 3.059,
+    "moving_time_s": 2092,
+    "elapsed_time_s": 2546,
+    "elevation_m": 6.0,
+    "avg_hr": 76.7,
+    "max_hr": 96.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19230380755,
     "name": "Easy 10K. Felt really good 👌 Nice surge near the end.",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 17.0,
     "avg_hr": 152.6,
     "max_hr": 188.0,
-    "kudos": 14,
+    "kudos": 15,
     "prs": 0,
     "achievements": 0
   },
