@@ -1,5 +1,20 @@
 [
   {
+    "id": 19281126607,
+    "name": "10 Min. Abs / Core ✅ 60 Min. Snooker practice ✅ 5K Run. Walk. Run. ✅ Beers and snacks later 👌 ☀️",
+    "type": "Run",
+    "date": "2026-07-12T13:23:12Z",
+    "distance_km": 5.017,
+    "moving_time_s": 1685,
+    "elapsed_time_s": 1723,
+    "elevation_m": 15.0,
+    "avg_hr": 154.3,
+    "max_hr": 184.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19252665872,
     "name": "Getting breakfast ☀️",
     "type": "Run",
