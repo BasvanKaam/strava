@@ -1,5 +1,20 @@
 [
   {
+    "id": 19296939997,
+    "name": "Terras loop ❤️",
+    "type": "Run",
+    "date": "2026-07-13T17:32:54Z",
+    "distance_km": 5.976,
+    "moving_time_s": 3783,
+    "elapsed_time_s": 4108,
+    "elevation_m": 26.0,
+    "avg_hr": 83.4,
+    "max_hr": 100.0,
+    "kudos": 1,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19281126607,
     "name": "10 Min. Abs / Core ✅ 60 Min. Snooker practice ✅ 5K Run. Walk. Run. ✅ Beers and snacks later 👌 ☀️",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 15.0,
     "avg_hr": 154.3,
     "max_hr": 184.0,
-    "kudos": 4,
+    "kudos": 8,
     "prs": 0,
     "achievements": 0
   },
