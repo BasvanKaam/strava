@@ -1,5 +1,20 @@
 [
   {
+    "id": 19310648857,
+    "name": "Jog. Walk. Jog. 🥵 With a (clever) water refreshment every 2K 👌",
+    "type": "Run",
+    "date": "2026-07-14T16:01:36Z",
+    "distance_km": 10.633,
+    "moving_time_s": 3901,
+    "elapsed_time_s": 4148,
+    "elevation_m": 32.0,
+    "avg_hr": 154.9,
+    "max_hr": 190.0,
+    "kudos": 2,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19296939997,
     "name": "Terras loop ❤️",
     "type": "Run",
