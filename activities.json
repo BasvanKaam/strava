@@ -1,5 +1,20 @@
 [
   {
+    "id": 19325047000,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-07-15T17:11:10Z",
+    "distance_km": 3.341,
+    "moving_time_s": 2225,
+    "elapsed_time_s": 2354,
+    "elevation_m": 24.0,
+    "avg_hr": 95.7,
+    "max_hr": 109.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19323941094,
     "name": "In between work 5K to get into the holiday mood 😅 Some intervals near the end 🥵",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 14.0,
     "avg_hr": 160.5,
     "max_hr": 184.0,
-    "kudos": 0,
+    "kudos": 2,
     "prs": 0,
     "achievements": 0
   },
