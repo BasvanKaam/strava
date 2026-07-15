@@ -1,5 +1,20 @@
 [
   {
+    "id": 19323941094,
+    "name": "In between work 5K to get into the holiday mood 😅 Some intervals near the end 🥵",
+    "type": "Run",
+    "date": "2026-07-15T15:41:39Z",
+    "distance_km": 5.046,
+    "moving_time_s": 1548,
+    "elapsed_time_s": 1592,
+    "elevation_m": 14.0,
+    "avg_hr": 160.5,
+    "max_hr": 184.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19310648857,
     "name": "Jog. Walk. Jog. 🥵 With a (clever) water refreshment every 2K 👌",
     "type": "Run",
