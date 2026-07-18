@@ -1,5 +1,20 @@
 [
   {
+    "id": 19364457971,
+    "name": "My holiday has officially started 😅 Nice and hilly 👌 \n\n\nNext... ☀️🍺 🥩 🍸 🍹 🍋‍🟩",
+    "type": "Run",
+    "date": "2026-07-18T16:13:20Z",
+    "distance_km": 7.488,
+    "moving_time_s": 2699,
+    "elapsed_time_s": 2699,
+    "elevation_m": 92.0,
+    "avg_hr": 154.5,
+    "max_hr": 177.0,
+    "kudos": 5,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19337473312,
     "name": "Negative split 5K 🥵 Easy intervals to close out ☀️",
     "type": "Run",
