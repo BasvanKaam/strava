@@ -1,5 +1,20 @@
 [
   {
+    "id": 19378286156,
+    "name": "Nice, warm and hilly R. W. R. ☀️🥵",
+    "type": "Run",
+    "date": "2026-07-19T16:08:31Z",
+    "distance_km": 10.147,
+    "moving_time_s": 3606,
+    "elapsed_time_s": 3634,
+    "elevation_m": 105.0,
+    "avg_hr": 154.4,
+    "max_hr": 182.0,
+    "kudos": 1,
+    "prs": 2,
+    "achievements": 2
+  },
+  {
     "id": 19374531156,
     "name": "Local market stroll 👌",
     "type": "Run",
