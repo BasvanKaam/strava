@@ -1,5 +1,20 @@
 [
   {
+    "id": 19374531156,
+    "name": "Middagloop",
+    "type": "Run",
+    "date": "2026-07-19T11:41:11Z",
+    "distance_km": 3.029,
+    "moving_time_s": 4305,
+    "elapsed_time_s": 4316,
+    "elevation_m": 16.0,
+    "avg_hr": 67.0,
+    "max_hr": 88.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19364457971,
     "name": "My holiday has officially started 😅 Nice and hilly 👌 \n\n\nNext... ☀️🍺 🥩 🍸 🍹 🍋‍🟩",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 92.0,
     "avg_hr": 154.5,
     "max_hr": 177.0,
-    "kudos": 16,
+    "kudos": 18,
     "prs": 0,
     "achievements": 0
   },
