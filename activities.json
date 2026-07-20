@@ -1,5 +1,20 @@
 [
   {
+    "id": 19390324940,
+    "name": "Jog. Walk. Jog. ☀️ 🦅 👌",
+    "type": "Run",
+    "date": "2026-07-20T16:28:16Z",
+    "distance_km": 12.14,
+    "moving_time_s": 4617,
+    "elapsed_time_s": 4852,
+    "elevation_m": 174.0,
+    "avg_hr": 144.3,
+    "max_hr": 171.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19378286156,
     "name": "Nice, warm and hilly R. W. R. ☀️🥵",
     "type": "Run",
