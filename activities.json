@@ -1,5 +1,20 @@
 [
   {
+    "id": 19404777584,
+    "name": "Had to take a rest day, but couldn't 😅 Easy going ☀️",
+    "type": "Run",
+    "date": "2026-07-21T16:24:29Z",
+    "distance_km": 10.479,
+    "moving_time_s": 3912,
+    "elapsed_time_s": 3927,
+    "elevation_m": 120.0,
+    "avg_hr": 146.1,
+    "max_hr": 171.0,
+    "kudos": 1,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19390324940,
     "name": "Jog. Walk. Jog. ☀️ 🦅 👌",
     "type": "Run",
