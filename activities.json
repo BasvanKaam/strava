@@ -1,5 +1,20 @@
 [
   {
+    "id": 19433746121,
+    "name": "Bummer 👎",
+    "type": "Run",
+    "date": "2026-07-23T16:08:28Z",
+    "distance_km": 15.041,
+    "moving_time_s": 5874,
+    "elapsed_time_s": 6099,
+    "elevation_m": 163.0,
+    "avg_hr": 142.9,
+    "max_hr": 173.0,
+    "kudos": 4,
+    "prs": 1,
+    "achievements": 2
+  },
+  {
     "id": 19404777584,
     "name": "Had to take a rest day, but couldn't 😅 Easy going ☀️",
     "type": "Run",
