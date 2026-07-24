@@ -1,5 +1,20 @@
 [
   {
+    "id": 19447110142,
+    "name": "Afternoon walk 🙏 ☀️",
+    "type": "Run",
+    "date": "2026-07-24T16:12:51Z",
+    "distance_km": 10.103,
+    "moving_time_s": 4868,
+    "elapsed_time_s": 4910,
+    "elevation_m": 109.0,
+    "avg_hr": 115.2,
+    "max_hr": 153.0,
+    "kudos": 1,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19442974543,
     "name": "Around the parc, mini golf and soccer with my buddy 👌",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 32.0,
     "avg_hr": 74.4,
     "max_hr": 97.0,
-    "kudos": 5,
+    "kudos": 7,
     "prs": 0,
     "achievements": 0
   },
@@ -40,7 +55,7 @@
     "elevation_m": 120.0,
     "avg_hr": 146.1,
     "max_hr": 171.0,
-    "kudos": 11,
+    "kudos": 12,
     "prs": 0,
     "achievements": 0
   },
