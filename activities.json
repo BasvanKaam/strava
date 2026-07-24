@@ -1,5 +1,20 @@
 [
   {
+    "id": 19442974543,
+    "name": "Around the parc, mini golf and soccer with my buddy 👌",
+    "type": "Run",
+    "date": "2026-07-24T10:24:06Z",
+    "distance_km": 3.759,
+    "moving_time_s": 4524,
+    "elapsed_time_s": 5164,
+    "elevation_m": 32.0,
+    "avg_hr": 74.4,
+    "max_hr": 97.0,
+    "kudos": 1,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19433746121,
     "name": "Bummer 👎",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 163.0,
     "avg_hr": 142.9,
     "max_hr": 173.0,
-    "kudos": 13,
+    "kudos": 14,
     "prs": 1,
     "achievements": 2
   },
