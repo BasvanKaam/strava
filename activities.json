@@ -1,7 +1,7 @@
 [
   {
     "id": 19474951259,
-    "name": "Last run in France. Easy going, foot getting bit better.",
+    "name": "Last jog, walk, jog in France. Easy going, foot getting bit better.",
     "type": "Run",
     "date": "2026-07-26T16:20:28Z",
     "distance_km": 12.35,
@@ -10,7 +10,7 @@
     "elevation_m": 187.0,
     "avg_hr": 132.3,
     "max_hr": 158.0,
-    "kudos": 4,
+    "kudos": 6,
     "prs": 0,
     "achievements": 1
   },
@@ -25,7 +25,7 @@
     "elevation_m": 80.0,
     "avg_hr": 80.1,
     "max_hr": 108.0,
-    "kudos": 6,
+    "kudos": 7,
     "prs": 0,
     "achievements": 2
   },
@@ -40,7 +40,7 @@
     "elevation_m": 140.0,
     "avg_hr": 128.6,
     "max_hr": 162.0,
-    "kudos": 12,
+    "kudos": 13,
     "prs": 0,
     "achievements": 2
   },
@@ -70,7 +70,7 @@
     "elevation_m": 109.0,
     "avg_hr": 115.2,
     "max_hr": 153.0,
-    "kudos": 15,
+    "kudos": 16,
     "prs": 0,
     "achievements": 0
   },
