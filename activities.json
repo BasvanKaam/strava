@@ -1,5 +1,20 @@
 [
   {
+    "id": 19474951259,
+    "name": "Last run in France. Easy going, foot getting bit better.",
+    "type": "Run",
+    "date": "2026-07-26T16:20:28Z",
+    "distance_km": 12.35,
+    "moving_time_s": 5127,
+    "elapsed_time_s": 5130,
+    "elevation_m": 187.0,
+    "avg_hr": 132.3,
+    "max_hr": 158.0,
+    "kudos": 4,
+    "prs": 0,
+    "achievements": 1
+  },
+  {
     "id": 19471564112,
     "name": "Fam walk ❤️",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 80.0,
     "avg_hr": 80.1,
     "max_hr": 108.0,
-    "kudos": 4,
+    "kudos": 6,
     "prs": 0,
     "achievements": 2
   },
@@ -25,7 +40,7 @@
     "elevation_m": 140.0,
     "avg_hr": 128.6,
     "max_hr": 162.0,
-    "kudos": 11,
+    "kudos": 12,
     "prs": 0,
     "achievements": 2
   },
