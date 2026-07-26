@@ -1,5 +1,20 @@
 [
   {
+    "id": 19471564112,
+    "name": "Fam walk ❤️",
+    "type": "Run",
+    "date": "2026-07-26T12:51:20Z",
+    "distance_km": 4.485,
+    "moving_time_s": 3068,
+    "elapsed_time_s": 3287,
+    "elevation_m": 80.0,
+    "avg_hr": 80.1,
+    "max_hr": 108.0,
+    "kudos": 3,
+    "prs": 0,
+    "achievements": 2
+  },
+  {
     "id": 19461067980,
     "name": "Afternoon walk 🙏☀️",
     "type": "Run",
