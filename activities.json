@@ -1,5 +1,20 @@
 [
   {
+    "id": 19532240761,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-07-30T17:33:34Z",
+    "distance_km": 5.359,
+    "moving_time_s": 3990,
+    "elapsed_time_s": 8202,
+    "elevation_m": 10.0,
+    "avg_hr": 90.4,
+    "max_hr": 109.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19529981276,
     "name": "Back home holiday jog. Some medium intervals near the end. Lively run 👌",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 17.0,
     "avg_hr": 147.7,
     "max_hr": 181.0,
-    "kudos": 7,
+    "kudos": 10,
     "prs": 2,
     "achievements": 4
   },
