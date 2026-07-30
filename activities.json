@@ -1,5 +1,20 @@
 [
   {
+    "id": 19529981276,
+    "name": "Back home holiday jog. Some medium intervals near the end. Lively run 👌",
+    "type": "Run",
+    "date": "2026-07-30T15:24:14Z",
+    "distance_km": 12.345,
+    "moving_time_s": 4511,
+    "elapsed_time_s": 4524,
+    "elevation_m": 17.0,
+    "avg_hr": 147.7,
+    "max_hr": 181.0,
+    "kudos": 0,
+    "prs": 2,
+    "achievements": 4
+  },
+  {
     "id": 19474951259,
     "name": "Last jog, walk, jog in France. Easy going, foot getting bit better.",
     "type": "Run",
