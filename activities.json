@@ -1,5 +1,20 @@
 [
   {
+    "id": 19554631877,
+    "name": "Fam walk plus lunch ❤️",
+    "type": "Run",
+    "date": "2026-08-01T11:42:15Z",
+    "distance_km": 5.317,
+    "moving_time_s": 5148,
+    "elapsed_time_s": 6429,
+    "elevation_m": 14.0,
+    "avg_hr": 75.2,
+    "max_hr": 105.0,
+    "kudos": 3,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19544430805,
     "name": "Easy run / walk + 5 X 800 medium intervals 👌☀️",
     "type": "Run",
