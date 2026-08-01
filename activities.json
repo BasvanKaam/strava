@@ -1,5 +1,20 @@
 [
   {
+    "id": 19557987902,
+    "name": "Subtle 5K ☀️",
+    "type": "Run",
+    "date": "2026-08-01T17:04:16Z",
+    "distance_km": 5.014,
+    "moving_time_s": 1578,
+    "elapsed_time_s": 1585,
+    "elevation_m": 7.0,
+    "avg_hr": 151.6,
+    "max_hr": 184.0,
+    "kudos": 3,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19554631877,
     "name": "Fam walk plus lunch ❤️",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 14.0,
     "avg_hr": 75.2,
     "max_hr": 105.0,
-    "kudos": 4,
+    "kudos": 6,
     "prs": 0,
     "achievements": 0
   },
