@@ -1,5 +1,20 @@
 [
   {
+    "id": 19584399758,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-08-03T17:11:07Z",
+    "distance_km": 5.058,
+    "moving_time_s": 1516,
+    "elapsed_time_s": 1683,
+    "elevation_m": 9.0,
+    "avg_hr": 160.9,
+    "max_hr": 184.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19557987902,
     "name": "Subtle 5K ☀️",
     "type": "Run",
