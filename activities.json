@@ -1,5 +1,20 @@
 [
   {
+    "id": 19628599166,
+    "name": "Lovely run. It's becoming easier again. R. W. R. Low ❤️",
+    "type": "Run",
+    "date": "2026-08-06T16:34:26Z",
+    "distance_km": 10.107,
+    "moving_time_s": 3385,
+    "elapsed_time_s": 3398,
+    "elevation_m": 31.0,
+    "avg_hr": 147.7,
+    "max_hr": 172.0,
+    "kudos": 11,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19584399758,
     "name": "Nice little 5K",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 9.0,
     "avg_hr": 160.9,
     "max_hr": 184.0,
-    "kudos": 14,
+    "kudos": 15,
     "prs": 0,
     "achievements": 0
   },
