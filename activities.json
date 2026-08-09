@@ -1,7 +1,7 @@
 [
   {
     "id": 19665409872,
-    "name": "Ochtendloop",
+    "name": "Hangover walk #DanceValley",
     "type": "Run",
     "date": "2026-08-09T10:01:28Z",
     "distance_km": 5.613,
@@ -10,7 +10,7 @@
     "elevation_m": 9.0,
     "avg_hr": 87.5,
     "max_hr": 110.0,
-    "kudos": 0,
+    "kudos": 3,
     "prs": 0,
     "achievements": 0
   },
