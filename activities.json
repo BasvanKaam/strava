@@ -1,5 +1,20 @@
 [
   {
+    "id": 19665409872,
+    "name": "Ochtendloop",
+    "type": "Run",
+    "date": "2026-08-09T10:01:28Z",
+    "distance_km": 5.613,
+    "moving_time_s": 5766,
+    "elapsed_time_s": 6190,
+    "elevation_m": 9.0,
+    "avg_hr": 87.5,
+    "max_hr": 110.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19628599166,
     "name": "Lovely run. It's becoming easier again. R. W. R. Low ❤️",
     "type": "Run",
