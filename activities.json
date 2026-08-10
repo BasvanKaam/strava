@@ -1,5 +1,20 @@
 [
   {
+    "id": 19682909530,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-08-10T17:20:00Z",
+    "distance_km": 2.423,
+    "moving_time_s": 1609,
+    "elapsed_time_s": 1662,
+    "elevation_m": 9.0,
+    "avg_hr": 79.0,
+    "max_hr": 98.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19665409872,
     "name": "Hangover walk #DanceValley",
     "type": "Run",
