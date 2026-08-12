@@ -1,5 +1,20 @@
 [
   {
+    "id": 19715333006,
+    "name": "Avondloop",
+    "type": "Run",
+    "date": "2026-08-12T19:58:11Z",
+    "distance_km": 1.145,
+    "moving_time_s": 737,
+    "elapsed_time_s": 1754,
+    "elevation_m": 6.0,
+    "avg_hr": 89.9,
+    "max_hr": 106.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19712667058,
     "name": "Recovery walk / dribble",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 18.0,
     "avg_hr": 129.0,
     "max_hr": 159.0,
-    "kudos": 3,
+    "kudos": 5,
     "prs": 0,
     "achievements": 0
   },
