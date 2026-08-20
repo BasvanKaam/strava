@@ -1,5 +1,20 @@
 [
   {
+    "id": 19819773825,
+    "name": "Ochtendloop",
+    "type": "Run",
+    "date": "2026-08-20T08:36:49Z",
+    "distance_km": 5.093,
+    "moving_time_s": 3674,
+    "elapsed_time_s": 5139,
+    "elevation_m": 10.0,
+    "avg_hr": 74.0,
+    "max_hr": 88.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19810622725,
     "name": "Namiddagloop",
     "type": "Run",
