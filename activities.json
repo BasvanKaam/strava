@@ -1,7 +1,7 @@
 [
   {
     "id": 19826239688,
-    "name": "Avondloop",
+    "name": "Evening walk.",
     "type": "Run",
     "date": "2026-08-20T18:35:04Z",
     "distance_km": 3.144,
@@ -10,13 +10,13 @@
     "elevation_m": 12.0,
     "avg_hr": 78.5,
     "max_hr": 99.0,
-    "kudos": 0,
+    "kudos": 1,
     "prs": 0,
     "achievements": 0
   },
   {
     "id": 19819773825,
-    "name": "Ochtendloop",
+    "name": "Morning walk plus breakfast 🍳",
     "type": "Run",
     "date": "2026-08-20T08:36:49Z",
     "distance_km": 5.093,
@@ -25,13 +25,13 @@
     "elevation_m": 10.0,
     "avg_hr": 74.0,
     "max_hr": 88.0,
-    "kudos": 0,
+    "kudos": 1,
     "prs": 0,
     "achievements": 0
   },
   {
     "id": 19810622725,
-    "name": "Namiddagloop",
+    "name": "Afternoon dribble.",
     "type": "Run",
     "date": "2026-08-19T16:35:50Z",
     "distance_km": 8.428,
