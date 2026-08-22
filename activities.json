@@ -1,5 +1,20 @@
 [
   {
+    "id": 19852492038,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-08-22T16:06:38Z",
+    "distance_km": 10.785,
+    "moving_time_s": 4101,
+    "elapsed_time_s": 4175,
+    "elevation_m": 29.0,
+    "avg_hr": 131.7,
+    "max_hr": 183.0,
+    "kudos": 0,
+    "prs": 2,
+    "achievements": 3
+  },
+  {
     "id": 19848705074,
     "name": "Carrot cake with fam 🥕",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 23.0,
     "avg_hr": 67.1,
     "max_hr": 83.0,
-    "kudos": 1,
+    "kudos": 3,
     "prs": 0,
     "achievements": 0
   },
