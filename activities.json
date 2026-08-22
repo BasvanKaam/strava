@@ -1,5 +1,20 @@
 [
   {
+    "id": 19848705074,
+    "name": "Carrot cake with fam 🥕",
+    "type": "Run",
+    "date": "2026-08-22T11:28:22Z",
+    "distance_km": 5.009,
+    "moving_time_s": 4438,
+    "elapsed_time_s": 5526,
+    "elevation_m": 23.0,
+    "avg_hr": 67.1,
+    "max_hr": 83.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19833416153,
     "name": "Ochtendloop",
     "type": "Run",
@@ -25,7 +40,7 @@
     "elevation_m": 12.0,
     "avg_hr": 78.5,
     "max_hr": 99.0,
-    "kudos": 9,
+    "kudos": 10,
     "prs": 0,
     "achievements": 0
   },
@@ -40,7 +55,7 @@
     "elevation_m": 10.0,
     "avg_hr": 74.0,
     "max_hr": 88.0,
-    "kudos": 5,
+    "kudos": 6,
     "prs": 0,
     "achievements": 0
   },
