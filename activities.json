@@ -1,5 +1,20 @@
 [
   {
+    "id": 19879893955,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-08-24T17:12:28Z",
+    "distance_km": 3.004,
+    "moving_time_s": 2106,
+    "elapsed_time_s": 2163,
+    "elevation_m": 12.0,
+    "avg_hr": 74.2,
+    "max_hr": 98.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19866871725,
     "name": "Easy 8, intervals ☀️😎",
     "type": "Run",
