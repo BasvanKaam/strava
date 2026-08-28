@@ -1,5 +1,20 @@
 [
   {
+    "id": 19932854337,
+    "name": "Morning walk plus breakfast 🍳",
+    "type": "Run",
+    "date": "2026-08-28T09:03:28Z",
+    "distance_km": 5.689,
+    "moving_time_s": 3914,
+    "elapsed_time_s": 5214,
+    "elevation_m": 16.0,
+    "avg_hr": 74.2,
+    "max_hr": 91.0,
+    "kudos": 4,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19904663097,
     "name": "Breakfast pick up ☀️",
     "type": "Run",
