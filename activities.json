@@ -1,5 +1,20 @@
 [
   {
+    "id": 19936957650,
+    "name": "Damn it :(",
+    "type": "Run",
+    "date": "2026-08-28T16:19:44Z",
+    "distance_km": 5.118,
+    "moving_time_s": 1820,
+    "elapsed_time_s": 1844,
+    "elevation_m": 13.0,
+    "avg_hr": 140.5,
+    "max_hr": 169.0,
+    "kudos": 8,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19932854337,
     "name": "Morning walk plus breakfast 🍳",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 16.0,
     "avg_hr": 74.2,
     "max_hr": 91.0,
-    "kudos": 4,
+    "kudos": 7,
     "prs": 0,
     "achievements": 0
   },
