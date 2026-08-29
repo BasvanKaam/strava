@@ -1,5 +1,20 @@
 [
   {
+    "id": 19952033649,
+    "name": "Ochtendloop",
+    "type": "Run",
+    "date": "2026-08-29T09:47:59Z",
+    "distance_km": 1.599,
+    "moving_time_s": 1137,
+    "elapsed_time_s": 1218,
+    "elevation_m": 4.0,
+    "avg_hr": 75.2,
+    "max_hr": 85.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19936957650,
     "name": "Damn it :(",
     "type": "Run",
