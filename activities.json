@@ -1,7 +1,22 @@
 [
   {
+    "id": 19991459828,
+    "name": "Nope :(",
+    "type": "Run",
+    "date": "2026-09-01T16:42:40Z",
+    "distance_km": 3.084,
+    "moving_time_s": 1322,
+    "elapsed_time_s": 1353,
+    "elevation_m": 6.0,
+    "avg_hr": 117.4,
+    "max_hr": 151.0,
+    "kudos": 6,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19986258199,
-    "name": "Ochtendloop",
+    "name": "Getting breakfast ☀️",
     "type": "Run",
     "date": "2026-09-01T08:52:06Z",
     "distance_km": 4.682,
@@ -10,7 +25,7 @@
     "elevation_m": 14.0,
     "avg_hr": 74.7,
     "max_hr": 91.0,
-    "kudos": 0,
+    "kudos": 4,
     "prs": 0,
     "achievements": 0
   },
@@ -25,7 +40,7 @@
     "elevation_m": 20.0,
     "avg_hr": 82.4,
     "max_hr": 95.0,
-    "kudos": 7,
+    "kudos": 8,
     "prs": 0,
     "achievements": 0
   },
