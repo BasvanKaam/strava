@@ -1,5 +1,20 @@
 [
   {
+    "id": 19986258199,
+    "name": "Ochtendloop",
+    "type": "Run",
+    "date": "2026-09-01T08:52:06Z",
+    "distance_km": 4.682,
+    "moving_time_s": 3006,
+    "elapsed_time_s": 3296,
+    "elevation_m": 14.0,
+    "avg_hr": 74.7,
+    "max_hr": 91.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 19976527362,
     "name": "Evening walk ☀️",
     "type": "Run",
