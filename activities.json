@@ -1,5 +1,20 @@
 [
   {
+    "id": 20132034879,
+    "name": "Yamas  🇬🇷",
+    "type": "Run",
+    "date": "2026-09-11T17:00:53Z",
+    "distance_km": 5.729,
+    "moving_time_s": 3685,
+    "elapsed_time_s": 3859,
+    "elevation_m": 22.0,
+    "avg_hr": 80.0,
+    "max_hr": 96.0,
+    "kudos": 7,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20113025750,
     "name": "Getting breakfast 👌",
     "type": "Run",
