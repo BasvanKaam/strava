@@ -1,5 +1,20 @@
 [
   {
+    "id": 20167393176,
+    "name": "Getting breakfast walk ☀️",
+    "type": "Run",
+    "date": "2026-09-14T09:35:08Z",
+    "distance_km": 3.084,
+    "moving_time_s": 2027,
+    "elapsed_time_s": 2312,
+    "elevation_m": 5.0,
+    "avg_hr": 78.9,
+    "max_hr": 103.0,
+    "kudos": 5,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20132034879,
     "name": "Yamas  🇬🇷",
     "type": "Run",
