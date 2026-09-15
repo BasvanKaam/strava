@@ -1,5 +1,20 @@
 [
   {
+    "id": 20184784589,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-09-15T14:26:25Z",
+    "distance_km": 3.406,
+    "moving_time_s": 2239,
+    "elapsed_time_s": 2320,
+    "elevation_m": 15.0,
+    "avg_hr": 78.3,
+    "max_hr": 96.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20167393176,
     "name": "Getting breakfast walk ☀️",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 5.0,
     "avg_hr": 78.9,
     "max_hr": 103.0,
-    "kudos": 8,
+    "kudos": 9,
     "prs": 0,
     "achievements": 0
   },
