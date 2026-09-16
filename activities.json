@@ -1,7 +1,22 @@
 [
   {
+    "id": 20196079551,
+    "name": "Kick off 👌",
+    "type": "Run",
+    "date": "2026-09-16T09:01:37Z",
+    "distance_km": 3.043,
+    "moving_time_s": 1921,
+    "elapsed_time_s": 1943,
+    "elevation_m": 10.0,
+    "avg_hr": 77.5,
+    "max_hr": 96.0,
+    "kudos": 1,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20184784589,
-    "name": "Namiddagloop",
+    "name": "Chilling.",
     "type": "Run",
     "date": "2026-09-15T14:26:25Z",
     "distance_km": 3.406,
@@ -10,7 +25,7 @@
     "elevation_m": 15.0,
     "avg_hr": 78.3,
     "max_hr": 96.0,
-    "kudos": 0,
+    "kudos": 1,
     "prs": 0,
     "achievements": 0
   },
