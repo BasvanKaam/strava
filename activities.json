@@ -1,5 +1,20 @@
 [
   {
+    "id": 20237521172,
+    "name": "Morning walk 👌",
+    "type": "Run",
+    "date": "2026-09-19T08:14:06Z",
+    "distance_km": 8.388,
+    "moving_time_s": 6029,
+    "elapsed_time_s": 12311,
+    "elevation_m": 72.0,
+    "avg_hr": 76.6,
+    "max_hr": 102.0,
+    "kudos": 2,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20224083662,
     "name": "Ochtendloop",
     "type": "Run",
