@@ -1,5 +1,20 @@
 [
   {
+    "id": 20253966388,
+    "name": "Awesome walk with my ❤️",
+    "type": "Run",
+    "date": "2026-09-20T12:21:36Z",
+    "distance_km": 8.626,
+    "moving_time_s": 5730,
+    "elapsed_time_s": 5944,
+    "elevation_m": 136.0,
+    "avg_hr": 83.4,
+    "max_hr": 117.0,
+    "kudos": 3,
+    "prs": 1,
+    "achievements": 10
+  },
+  {
     "id": 20237521172,
     "name": "Morning walk 👌",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 72.0,
     "avg_hr": 76.6,
     "max_hr": 102.0,
-    "kudos": 12,
+    "kudos": 13,
     "prs": 0,
     "achievements": 0
   },
