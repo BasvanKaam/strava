@@ -1,7 +1,37 @@
 [
   {
+    "id": 20268906152,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-09-21T17:10:13Z",
+    "distance_km": 2.571,
+    "moving_time_s": 1845,
+    "elapsed_time_s": 1887,
+    "elevation_m": 8.0,
+    "avg_hr": 76.0,
+    "max_hr": 90.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
+    "id": 20267053007,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-09-21T14:40:21Z",
+    "distance_km": 1.525,
+    "moving_time_s": 969,
+    "elapsed_time_s": 992,
+    "elevation_m": 2.0,
+    "avg_hr": 80.1,
+    "max_hr": 94.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20264046959,
-    "name": "Ochtendloop",
+    "name": "Week start 💪",
     "type": "Run",
     "date": "2026-09-21T08:57:18Z",
     "distance_km": 5.062,
@@ -10,7 +40,7 @@
     "elevation_m": 7.0,
     "avg_hr": 73.0,
     "max_hr": 87.0,
-    "kudos": 0,
+    "kudos": 4,
     "prs": 0,
     "achievements": 0
   },
