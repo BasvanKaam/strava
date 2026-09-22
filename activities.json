@@ -1,5 +1,20 @@
 [
   {
+    "id": 20283351459,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-09-22T17:11:05Z",
+    "distance_km": 2.609,
+    "moving_time_s": 1773,
+    "elapsed_time_s": 1819,
+    "elevation_m": 7.0,
+    "avg_hr": 76.3,
+    "max_hr": 91.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20279124900,
     "name": "Middagloop",
     "type": "Run",
