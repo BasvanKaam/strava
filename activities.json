@@ -1,7 +1,22 @@
 [
   {
+    "id": 20320959369,
+    "name": "Day start ☀️",
+    "type": "Run",
+    "date": "2026-09-25T10:18:52Z",
+    "distance_km": 3.226,
+    "moving_time_s": 2077,
+    "elapsed_time_s": 2147,
+    "elevation_m": 7.0,
+    "avg_hr": 77.9,
+    "max_hr": 96.0,
+    "kudos": 3,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20311244092,
-    "name": "Namiddagloop",
+    "name": "Afternoon stroll ☀️",
     "type": "Run",
     "date": "2026-09-24T15:33:40Z",
     "distance_km": 3.557,
@@ -10,7 +25,7 @@
     "elevation_m": 14.0,
     "avg_hr": 83.5,
     "max_hr": 111.0,
-    "kudos": 0,
+    "kudos": 1,
     "prs": 0,
     "achievements": 0
   },
