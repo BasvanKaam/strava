@@ -1,5 +1,20 @@
 [
   {
+    "id": 20338081359,
+    "name": "Extremely careful run walk run ☀️",
+    "type": "Run",
+    "date": "2026-09-26T15:37:35Z",
+    "distance_km": 6.647,
+    "moving_time_s": 2767,
+    "elapsed_time_s": 2767,
+    "elevation_m": 16.0,
+    "avg_hr": 135.6,
+    "max_hr": 171.0,
+    "kudos": 3,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20324383340,
     "name": "Namiddagloop",
     "type": "Run",
@@ -25,7 +40,7 @@
     "elevation_m": 7.0,
     "avg_hr": 77.9,
     "max_hr": 96.0,
-    "kudos": 13,
+    "kudos": 14,
     "prs": 0,
     "achievements": 0
   },
