@@ -1,5 +1,20 @@
 [
   {
+    "id": 20347983227,
+    "name": "Monrong walk ☀️",
+    "type": "Run",
+    "date": "2026-09-27T10:13:08Z",
+    "distance_km": 6.103,
+    "moving_time_s": 4217,
+    "elapsed_time_s": 5575,
+    "elevation_m": 11.0,
+    "avg_hr": 76.7,
+    "max_hr": 93.0,
+    "kudos": 1,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20338081359,
     "name": "Extremely careful run walk run ☀️",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 16.0,
     "avg_hr": 135.6,
     "max_hr": 171.0,
-    "kudos": 3,
+    "kudos": 5,
     "prs": 0,
     "achievements": 0
   },
