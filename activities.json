@@ -1,5 +1,20 @@
 [
   {
+    "id": 20365771287,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-09-28T17:22:31Z",
+    "distance_km": 2.044,
+    "moving_time_s": 1386,
+    "elapsed_time_s": 1394,
+    "elevation_m": 2.0,
+    "avg_hr": 73.1,
+    "max_hr": 83.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20360960189,
     "name": "Breakfast ☀️",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 5.0,
     "avg_hr": 73.5,
     "max_hr": 87.0,
-    "kudos": 5,
+    "kudos": 10,
     "prs": 0,
     "achievements": 0
   },
@@ -25,7 +40,7 @@
     "elevation_m": 7.0,
     "avg_hr": 81.6,
     "max_hr": 93.0,
-    "kudos": 7,
+    "kudos": 8,
     "prs": 0,
     "achievements": 0
   },
