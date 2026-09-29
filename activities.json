@@ -1,7 +1,22 @@
 [
   {
+    "id": 20378348370,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-09-29T15:16:15Z",
+    "distance_km": 1.689,
+    "moving_time_s": 1128,
+    "elapsed_time_s": 1175,
+    "elevation_m": 2.0,
+    "avg_hr": 82.4,
+    "max_hr": 99.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20374414326,
-    "name": "Ochtendloop",
+    "name": "Getting breakfast ☀️",
     "type": "Run",
     "date": "2026-09-29T08:50:14Z",
     "distance_km": 5.16,
@@ -10,13 +25,13 @@
     "elevation_m": 8.0,
     "avg_hr": 71.0,
     "max_hr": 85.0,
-    "kudos": 0,
+    "kudos": 6,
     "prs": 0,
     "achievements": 0
   },
   {
     "id": 20365771287,
-    "name": "Namiddagloop",
+    "name": "Quick one ☀️",
     "type": "Run",
     "date": "2026-09-28T17:22:31Z",
     "distance_km": 2.044,
@@ -25,7 +40,7 @@
     "elevation_m": 2.0,
     "avg_hr": 73.1,
     "max_hr": 83.0,
-    "kudos": 0,
+    "kudos": 2,
     "prs": 0,
     "achievements": 0
   },
