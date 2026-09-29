@@ -13961,7 +13961,7 @@
     "avg_hr": 143.3,
     "max_hr": 183.0,
     "kudos": 29,
-    "prs": 1,
+    "prs": 2,
     "achievements": 3
   },
   {
@@ -14141,7 +14141,7 @@
     "avg_hr": 153.5,
     "max_hr": 179.0,
     "kudos": 24,
-    "prs": 0,
+    "prs": 1,
     "achievements": 3
   },
   {
@@ -15026,7 +15026,7 @@
     "avg_hr": 137.1,
     "max_hr": 157.0,
     "kudos": 15,
-    "prs": 0,
+    "prs": 1,
     "achievements": 2
   },
   {
@@ -15642,7 +15642,7 @@
     "max_hr": 182.0,
     "kudos": 22,
     "prs": 2,
-    "achievements": 5
+    "achievements": 4
   },
   {
     "id": 4548670754,
@@ -17546,7 +17546,7 @@
     "avg_hr": 141.8,
     "max_hr": 190.0,
     "kudos": 22,
-    "prs": 0,
+    "prs": 1,
     "achievements": 1
   },
   {
@@ -17577,7 +17577,7 @@
     "max_hr": 184.0,
     "kudos": 13,
     "prs": 2,
-    "achievements": 5
+    "achievements": 4
   },
   {
     "id": 3786014515,
@@ -17681,8 +17681,8 @@
     "avg_hr": 128.2,
     "max_hr": 178.0,
     "kudos": 14,
-    "prs": 0,
-    "achievements": 2
+    "prs": 1,
+    "achievements": 1
   },
   {
     "id": 3751234569,
@@ -17712,7 +17712,7 @@
     "max_hr": 182.0,
     "kudos": 30,
     "prs": 1,
-    "achievements": 7
+    "achievements": 6
   },
   {
     "id": 3749091452,
@@ -17742,7 +17742,7 @@
     "max_hr": 185.0,
     "kudos": 13,
     "prs": 1,
-    "achievements": 4
+    "achievements": 3
   },
   {
     "id": 3736979421,
@@ -17817,7 +17817,7 @@
     "max_hr": 185.0,
     "kudos": 22,
     "prs": 1,
-    "achievements": 2
+    "achievements": 1
   },
   {
     "id": 3726719060,
@@ -17876,8 +17876,8 @@
     "avg_hr": 164.7,
     "max_hr": 186.0,
     "kudos": 20,
-    "prs": 2,
-    "achievements": 5
+    "prs": 1,
+    "achievements": 2
   },
   {
     "id": 3703101001,
@@ -17966,7 +17966,7 @@
     "avg_hr": 152.7,
     "max_hr": 182.0,
     "kudos": 20,
-    "prs": 0,
+    "prs": 1,
     "achievements": 2
   },
   {
@@ -18131,8 +18131,8 @@
     "avg_hr": 163.8,
     "max_hr": 185.0,
     "kudos": 16,
-    "prs": 3,
-    "achievements": 4
+    "prs": 2,
+    "achievements": 2
   },
   {
     "id": 3567762289,
@@ -18296,8 +18296,8 @@
     "avg_hr": 140.5,
     "max_hr": 185.0,
     "kudos": 26,
-    "prs": 3,
-    "achievements": 4
+    "prs": 2,
+    "achievements": 2
   },
   {
     "id": 3498367552,
@@ -18326,7 +18326,7 @@
     "avg_hr": 150.2,
     "max_hr": 175.0,
     "kudos": 17,
-    "prs": 0,
+    "prs": 1,
     "achievements": 3
   },
   {
@@ -18597,7 +18597,7 @@
     "max_hr": 183.0,
     "kudos": 26,
     "prs": 1,
-    "achievements": 3
+    "achievements": 2
   },
   {
     "id": 3434867720,
@@ -18656,8 +18656,8 @@
     "avg_hr": 165.4,
     "max_hr": 183.0,
     "kudos": 17,
-    "prs": 3,
-    "achievements": 5
+    "prs": 2,
+    "achievements": 3
   },
   {
     "id": 3428852293,
@@ -19601,8 +19601,8 @@
     "avg_hr": 130.9,
     "max_hr": 183.0,
     "kudos": 17,
-    "prs": 0,
-    "achievements": 7
+    "prs": 3,
+    "achievements": 5
   },
   {
     "id": 3227612823,
@@ -20247,7 +20247,7 @@
     "max_hr": 187.0,
     "kudos": 17,
     "prs": 0,
-    "achievements": 3
+    "achievements": 2
   },
   {
     "id": 3079729497,
@@ -20606,7 +20606,7 @@
     "avg_hr": 160.2,
     "max_hr": 196.0,
     "kudos": 14,
-    "prs": 2,
+    "prs": 4,
     "achievements": 5
   },
   {
@@ -20666,8 +20666,8 @@
     "avg_hr": 167.9,
     "max_hr": 187.0,
     "kudos": 14,
-    "prs": 1,
-    "achievements": 2
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 2996087011,
@@ -20741,8 +20741,8 @@
     "avg_hr": 69.0,
     "max_hr": 91.0,
     "kudos": 5,
-    "prs": 1,
-    "achievements": 2
+    "prs": 0,
+    "achievements": 1
   },
   {
     "id": 2978675429,
@@ -20772,7 +20772,7 @@
     "max_hr": 184.0,
     "kudos": 8,
     "prs": 0,
-    "achievements": 2
+    "achievements": 0
   },
   {
     "id": 2975892560,
@@ -21357,7 +21357,7 @@
     "max_hr": 188.0,
     "kudos": 18,
     "prs": 0,
-    "achievements": 4
+    "achievements": 2
   },
   {
     "id": 2901368408,
@@ -22242,7 +22242,7 @@
     "max_hr": 186.0,
     "kudos": 7,
     "prs": 0,
-    "achievements": 2
+    "achievements": 0
   },
   {
     "id": 2752397234,
@@ -22271,8 +22271,8 @@
     "avg_hr": 169.0,
     "max_hr": 189.0,
     "kudos": 21,
-    "prs": 1,
-    "achievements": 3
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 2741485309,
@@ -22677,7 +22677,7 @@
     "max_hr": 185.0,
     "kudos": 18,
     "prs": 0,
-    "achievements": 1
+    "achievements": 0
   },
   {
     "id": 2687321876,
@@ -22751,8 +22751,8 @@
     "avg_hr": 158.4,
     "max_hr": 188.0,
     "kudos": 14,
-    "prs": 2,
-    "achievements": 2
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 2676606882,
@@ -22841,7 +22841,7 @@
     "avg_hr": 168.5,
     "max_hr": 183.0,
     "kudos": 6,
-    "prs": 0,
+    "prs": 1,
     "achievements": 1
   },
   {
@@ -22916,7 +22916,7 @@
     "avg_hr": 163.8,
     "max_hr": 182.0,
     "kudos": 16,
-    "prs": 0,
+    "prs": 1,
     "achievements": 3
   },
   {
@@ -22946,7 +22946,7 @@
     "avg_hr": 157.1,
     "max_hr": 182.0,
     "kudos": 11,
-    "prs": 1,
+    "prs": 2,
     "achievements": 2
   },
   {
@@ -23126,8 +23126,8 @@
     "avg_hr": 134.9,
     "max_hr": 183.0,
     "kudos": 10,
-    "prs": 2,
-    "achievements": 2
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 2626266295,
@@ -24387,7 +24387,7 @@
     "max_hr": 192.0,
     "kudos": 9,
     "prs": 0,
-    "achievements": 1
+    "achievements": 0
   },
   {
     "id": 2460605152,
@@ -24506,8 +24506,8 @@
     "avg_hr": 139.0,
     "max_hr": 185.0,
     "kudos": 8,
-    "prs": 1,
-    "achievements": 2
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 2441802836,
@@ -24521,8 +24521,8 @@
     "avg_hr": 148.1,
     "max_hr": 187.0,
     "kudos": 6,
-    "prs": 1,
-    "achievements": 3
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 2438916692,
@@ -24957,7 +24957,7 @@
     "max_hr": 180.0,
     "kudos": 4,
     "prs": 0,
-    "achievements": 4
+    "achievements": 3
   },
   {
     "id": 2377342221,
@@ -25031,8 +25031,8 @@
     "avg_hr": 169.0,
     "max_hr": 189.0,
     "kudos": 7,
-    "prs": 6,
-    "achievements": 7
+    "prs": 4,
+    "achievements": 5
   },
   {
     "id": 2366860753,
@@ -25256,8 +25256,8 @@
     "avg_hr": 146.6,
     "max_hr": 186.0,
     "kudos": 6,
-    "prs": 1,
-    "achievements": 2
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 2344422406,
@@ -25436,8 +25436,8 @@
     "avg_hr": 150.7,
     "max_hr": 169.0,
     "kudos": 13,
-    "prs": 1,
-    "achievements": 1
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 2322248751,
@@ -25526,8 +25526,8 @@
     "avg_hr": 168.0,
     "max_hr": 188.0,
     "kudos": 13,
-    "prs": 2,
-    "achievements": 4
+    "prs": 3,
+    "achievements": 3
   },
   {
     "id": 2309348819,
@@ -26172,7 +26172,7 @@
     "max_hr": 186.0,
     "kudos": 5,
     "prs": 0,
-    "achievements": 1
+    "achievements": 0
   },
   {
     "id": 2210912168,
@@ -26231,8 +26231,8 @@
     "avg_hr": 153.8,
     "max_hr": 176.0,
     "kudos": 5,
-    "prs": 2,
-    "achievements": 5
+    "prs": 1,
+    "achievements": 4
   },
   {
     "id": 2197352477,
@@ -26322,7 +26322,7 @@
     "max_hr": 183.0,
     "kudos": 6,
     "prs": 6,
-    "achievements": 10
+    "achievements": 8
   },
   {
     "id": 2179475806,
@@ -26351,8 +26351,8 @@
     "avg_hr": 159.6,
     "max_hr": 186.0,
     "kudos": 5,
-    "prs": 1,
-    "achievements": 4
+    "prs": 0,
+    "achievements": 2
   },
   {
     "id": 2171776054,
@@ -26381,8 +26381,8 @@
     "avg_hr": 166.6,
     "max_hr": 183.0,
     "kudos": 8,
-    "prs": 2,
-    "achievements": 3
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 2171175668,
@@ -26396,7 +26396,7 @@
     "avg_hr": 113.3,
     "max_hr": 131.0,
     "kudos": 0,
-    "prs": 0,
+    "prs": 1,
     "achievements": 1
   },
   {
@@ -26577,7 +26577,7 @@
     "max_hr": 184.0,
     "kudos": 7,
     "prs": 0,
-    "achievements": 1
+    "achievements": 0
   },
   {
     "id": 2141335179,
@@ -26666,8 +26666,8 @@
     "avg_hr": 171.4,
     "max_hr": 186.0,
     "kudos": 6,
-    "prs": 6,
-    "achievements": 7
+    "prs": 4,
+    "achievements": 4
   },
   {
     "id": 2118772498,
@@ -26727,7 +26727,7 @@
     "max_hr": 184.0,
     "kudos": 7,
     "prs": 0,
-    "achievements": 2
+    "achievements": 0
   },
   {
     "id": 2107172393,
@@ -26772,7 +26772,7 @@
     "max_hr": 187.0,
     "kudos": 7,
     "prs": 0,
-    "achievements": 2
+    "achievements": 0
   },
   {
     "id": 2100427505,
@@ -26982,7 +26982,7 @@
     "max_hr": 173.0,
     "kudos": 9,
     "prs": 3,
-    "achievements": 5
+    "achievements": 4
   },
   {
     "id": 2066781582,
@@ -27026,8 +27026,8 @@
     "avg_hr": 152.0,
     "max_hr": 190.0,
     "kudos": 7,
-    "prs": 2,
-    "achievements": 9
+    "prs": 3,
+    "achievements": 8
   },
   {
     "id": 2055151720,
@@ -27102,7 +27102,7 @@
     "max_hr": 174.0,
     "kudos": 8,
     "prs": 0,
-    "achievements": 5
+    "achievements": 4
   },
   {
     "id": 2036109376,
@@ -27132,7 +27132,7 @@
     "max_hr": 189.0,
     "kudos": 6,
     "prs": 0,
-    "achievements": 1
+    "achievements": 0
   },
   {
     "id": 2036107549,
@@ -27296,8 +27296,8 @@
     "avg_hr": 146.5,
     "max_hr": 187.0,
     "kudos": 6,
-    "prs": 0,
-    "achievements": 4
+    "prs": 1,
+    "achievements": 3
   },
   {
     "id": 1999941834,
@@ -27327,7 +27327,7 @@
     "max_hr": 181.0,
     "kudos": 3,
     "prs": 0,
-    "achievements": 1
+    "achievements": 0
   },
   {
     "id": 1996361131,
@@ -27431,7 +27431,7 @@
     "avg_hr": 149.5,
     "max_hr": 174.0,
     "kudos": 3,
-    "prs": 0,
+    "prs": 1,
     "achievements": 2
   },
   {
@@ -27447,7 +27447,7 @@
     "max_hr": 186.0,
     "kudos": 7,
     "prs": 0,
-    "achievements": 2
+    "achievements": 1
   },
   {
     "id": 1977341614,
@@ -27551,7 +27551,7 @@
     "avg_hr": 156.4,
     "max_hr": 175.0,
     "kudos": 4,
-    "prs": 0,
+    "prs": 1,
     "achievements": 2
   },
   {
@@ -27597,7 +27597,7 @@
     "max_hr": 181.0,
     "kudos": 10,
     "prs": 3,
-    "achievements": 12
+    "achievements": 8
   },
   {
     "id": 1954938880,
@@ -27611,7 +27611,7 @@
     "avg_hr": 151.5,
     "max_hr": 181.0,
     "kudos": 7,
-    "prs": 0,
+    "prs": 1,
     "achievements": 1
   },
   {
@@ -27732,7 +27732,7 @@
     "max_hr": 182.0,
     "kudos": 8,
     "prs": 1,
-    "achievements": 10
+    "achievements": 8
   },
   {
     "id": 1930217968,
@@ -27747,7 +27747,7 @@
     "max_hr": 186.0,
     "kudos": 6,
     "prs": 1,
-    "achievements": 3
+    "achievements": 1
   },
   {
     "id": 1924840149,
@@ -27776,8 +27776,8 @@
     "avg_hr": 170.0,
     "max_hr": 181.0,
     "kudos": 17,
-    "prs": 1,
-    "achievements": 1
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 1910547397,
@@ -28016,8 +28016,8 @@
     "avg_hr": 145.4,
     "max_hr": 187.0,
     "kudos": 5,
-    "prs": 1,
-    "achievements": 2
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 1847913978,
@@ -28136,8 +28136,8 @@
     "avg_hr": 167.5,
     "max_hr": 182.0,
     "kudos": 8,
-    "prs": 1,
-    "achievements": 2
+    "prs": 0,
+    "achievements": 1
   },
   {
     "id": 1829310356,
@@ -28211,7 +28211,7 @@
     "avg_hr": 152.5,
     "max_hr": 167.0,
     "kudos": 2,
-    "prs": 0,
+    "prs": 1,
     "achievements": 1
   },
   {
@@ -28226,8 +28226,8 @@
     "avg_hr": 172.4,
     "max_hr": 181.0,
     "kudos": 4,
-    "prs": 1,
-    "achievements": 2
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 1814034982,
@@ -28257,7 +28257,7 @@
     "max_hr": 180.0,
     "kudos": 4,
     "prs": 0,
-    "achievements": 3
+    "achievements": 0
   },
   {
     "id": 1807878636,
@@ -28286,8 +28286,8 @@
     "avg_hr": 169.1,
     "max_hr": 185.0,
     "kudos": 4,
-    "prs": 3,
-    "achievements": 4
+    "prs": 1,
+    "achievements": 2
   },
   {
     "id": 1805534377,
@@ -28331,8 +28331,8 @@
     "avg_hr": 162.9,
     "max_hr": 181.0,
     "kudos": 3,
-    "prs": 2,
-    "achievements": 4
+    "prs": 1,
+    "achievements": 2
   },
   {
     "id": 1794385205,
@@ -28346,8 +28346,8 @@
     "avg_hr": 170.8,
     "max_hr": 177.0,
     "kudos": 3,
-    "prs": 1,
-    "achievements": 2
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 1794385187,
@@ -28376,8 +28376,8 @@
     "avg_hr": 159.0,
     "max_hr": 190.0,
     "kudos": 4,
-    "prs": 0,
-    "achievements": 4
+    "prs": 1,
+    "achievements": 3
   },
   {
     "id": 1787573990,
@@ -28422,7 +28422,7 @@
     "max_hr": 176.0,
     "kudos": 7,
     "prs": 2,
-    "achievements": 3
+    "achievements": 2
   },
   {
     "id": 1776365211,
@@ -28437,7 +28437,7 @@
     "max_hr": 183.0,
     "kudos": 6,
     "prs": 2,
-    "achievements": 3
+    "achievements": 2
   },
   {
     "id": 1771785238,
@@ -28466,8 +28466,8 @@
     "avg_hr": 164.6,
     "max_hr": 183.0,
     "kudos": 7,
-    "prs": 8,
-    "achievements": 13
+    "prs": 4,
+    "achievements": 7
   },
   {
     "id": 1769574339,
@@ -28496,8 +28496,8 @@
     "avg_hr": 165.4,
     "max_hr": 176.0,
     "kudos": 2,
-    "prs": 2,
-    "achievements": 4
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 1769574238,
@@ -28512,7 +28512,7 @@
     "max_hr": 154.0,
     "kudos": 1,
     "prs": 0,
-    "achievements": 1
+    "achievements": 0
   },
   {
     "id": 1762884329,
@@ -28527,7 +28527,7 @@
     "max_hr": 184.0,
     "kudos": 6,
     "prs": 1,
-    "achievements": 6
+    "achievements": 4
   },
   {
     "id": 1758638757,
@@ -28542,7 +28542,7 @@
     "max_hr": 184.0,
     "kudos": 2,
     "prs": 0,
-    "achievements": 7
+    "achievements": 4
   },
   {
     "id": 1756222348,
@@ -28572,7 +28572,7 @@
     "max_hr": 178.0,
     "kudos": 4,
     "prs": 1,
-    "achievements": 5
+    "achievements": 3
   },
   {
     "id": 1749590011,
@@ -28587,7 +28587,7 @@
     "max_hr": 178.0,
     "kudos": 5,
     "prs": 0,
-    "achievements": 3
+    "achievements": 0
   },
   {
     "id": 1745079602,
@@ -28616,8 +28616,8 @@
     "avg_hr": 169.0,
     "max_hr": 180.0,
     "kudos": 3,
-    "prs": 1,
-    "achievements": 5
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 1745079678,
@@ -28647,7 +28647,7 @@
     "max_hr": 159.0,
     "kudos": 1,
     "prs": 0,
-    "achievements": 1
+    "achievements": 0
   },
   {
     "id": 1738058433,
@@ -28661,8 +28661,8 @@
     "avg_hr": 164.4,
     "max_hr": 180.0,
     "kudos": 2,
-    "prs": 3,
-    "achievements": 4
+    "prs": 0,
+    "achievements": 0
   },
   {
     "id": 1738058426,
@@ -28677,7 +28677,7 @@
     "max_hr": 150.0,
     "kudos": 1,
     "prs": 0,
-    "achievements": 3
+    "achievements": 0
   },
   {
     "id": 1736097352,
