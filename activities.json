@@ -1,5 +1,20 @@
 [
   {
+    "id": 20422024673,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-10-02T17:25:56Z",
+    "distance_km": 3.258,
+    "moving_time_s": 2155,
+    "elapsed_time_s": 2278,
+    "elevation_m": 12.0,
+    "avg_hr": 78.2,
+    "max_hr": 97.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20416578442,
     "name": "Ochtendloop",
     "type": "Run",
@@ -25,7 +40,7 @@
     "elevation_m": 8.0,
     "avg_hr": 77.9,
     "max_hr": 103.0,
-    "kudos": 5,
+    "kudos": 6,
     "prs": 0,
     "achievements": 0
   },
