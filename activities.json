@@ -1,5 +1,20 @@
 [
   {
+    "id": 20456977985,
+    "name": "Week start 👌 Breakfast ☀️",
+    "type": "Run",
+    "date": "2026-10-05T08:51:05Z",
+    "distance_km": 6.487,
+    "moving_time_s": 4332,
+    "elapsed_time_s": 5516,
+    "elevation_m": 10.0,
+    "avg_hr": 72.8,
+    "max_hr": 89.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20449075659,
     "name": "Fresh air ☀️",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 15.0,
     "avg_hr": 78.8,
     "max_hr": 91.0,
-    "kudos": 3,
+    "kudos": 5,
     "prs": 0,
     "achievements": 0
   },
