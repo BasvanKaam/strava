@@ -1,5 +1,20 @@
 [
   {
+    "id": 20470577917,
+    "name": "Wife drop off ☀️",
+    "type": "Run",
+    "date": "2026-10-06T08:47:01Z",
+    "distance_km": 6.202,
+    "moving_time_s": 4102,
+    "elapsed_time_s": 4756,
+    "elevation_m": 14.0,
+    "avg_hr": 72.0,
+    "max_hr": 94.0,
+    "kudos": 6,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20460357891,
     "name": "Refresh ☀️",
     "type": "Run",
