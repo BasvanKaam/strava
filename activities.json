@@ -1,7 +1,7 @@
 [
   {
     "id": 20485452211,
-    "name": "Ochtendloop",
+    "name": "Morning walk ☀️",
     "type": "Run",
     "date": "2026-10-07T08:47:28Z",
     "distance_km": 5.924,
@@ -10,7 +10,7 @@
     "elevation_m": 12.0,
     "avg_hr": 79.0,
     "max_hr": 114.0,
-    "kudos": 0,
+    "kudos": 3,
     "prs": 0,
     "achievements": 0
   },
