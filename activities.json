@@ -1,5 +1,20 @@
 [
   {
+    "id": 20545248594,
+    "name": "Evening walk with my ❤️",
+    "type": "Run",
+    "date": "2026-10-11T18:10:49Z",
+    "distance_km": 2.406,
+    "moving_time_s": 1741,
+    "elapsed_time_s": 1945,
+    "elevation_m": 2.0,
+    "avg_hr": 77.2,
+    "max_hr": 91.0,
+    "kudos": 1,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20541423770,
     "name": "Fam walk Nr 2 ❤️",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 15.0,
     "avg_hr": 110.3,
     "max_hr": 136.0,
-    "kudos": 7,
+    "kudos": 11,
     "prs": 0,
     "achievements": 0
   },
@@ -25,7 +40,7 @@
     "elevation_m": 33.0,
     "avg_hr": 77.3,
     "max_hr": 102.0,
-    "kudos": 12,
+    "kudos": 13,
     "prs": 0,
     "achievements": 0
   },
