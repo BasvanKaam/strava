@@ -1,7 +1,7 @@
 [
   {
     "id": 20552474147,
-    "name": "Middagloop",
+    "name": "Spaarnwoude ☀️",
     "type": "Run",
     "date": "2026-10-12T12:17:06Z",
     "distance_km": 5.493,
@@ -10,7 +10,7 @@
     "elevation_m": 15.0,
     "avg_hr": 74.9,
     "max_hr": 90.0,
-    "kudos": 0,
+    "kudos": 7,
     "prs": 0,
     "achievements": 0
   },
@@ -25,7 +25,7 @@
     "elevation_m": 2.0,
     "avg_hr": 77.2,
     "max_hr": 91.0,
-    "kudos": 4,
+    "kudos": 6,
     "prs": 0,
     "achievements": 0
   },
