@@ -1,7 +1,7 @@
 [
   {
     "id": 20618969083,
-    "name": "Ochtendloop",
+    "name": "Morning walk and lunch 🍳",
     "type": "Run",
     "date": "2026-10-17T10:31:53Z",
     "distance_km": 5.442,
@@ -10,7 +10,7 @@
     "elevation_m": 19.0,
     "avg_hr": 74.5,
     "max_hr": 90.0,
-    "kudos": 0,
+    "kudos": 3,
     "prs": 0,
     "achievements": 0
   },
