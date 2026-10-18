@@ -1,5 +1,20 @@
 [
   {
+    "id": 20635356477,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-10-18T14:16:28Z",
+    "distance_km": 6.065,
+    "moving_time_s": 4112,
+    "elapsed_time_s": 4145,
+    "elevation_m": 9.0,
+    "avg_hr": 81.7,
+    "max_hr": 100.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20618969083,
     "name": "Morning walk and lunch 🍳",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 19.0,
     "avg_hr": 74.5,
     "max_hr": 90.0,
-    "kudos": 7,
+    "kudos": 8,
     "prs": 0,
     "achievements": 0
   },
