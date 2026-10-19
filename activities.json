@@ -1,7 +1,22 @@
 [
   {
+    "id": 20648710509,
+    "name": "Walk / jog",
+    "type": "Run",
+    "date": "2026-10-19T17:00:53Z",
+    "distance_km": 6.086,
+    "moving_time_s": 2573,
+    "elapsed_time_s": 2574,
+    "elevation_m": 18.0,
+    "avg_hr": 124.3,
+    "max_hr": 168.0,
+    "kudos": 1,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20644195678,
-    "name": "Ochtendloop",
+    "name": "Morning walk plus breakfast 🍳",
     "type": "Run",
     "date": "2026-10-19T09:08:34Z",
     "distance_km": 5.283,
