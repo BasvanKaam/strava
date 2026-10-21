@@ -1,5 +1,20 @@
 [
   {
+    "id": 20671623167,
+    "name": "Daystart ☀️",
+    "type": "Run",
+    "date": "2026-10-21T09:10:02Z",
+    "distance_km": 6.182,
+    "moving_time_s": 4076,
+    "elapsed_time_s": 5595,
+    "elevation_m": 12.0,
+    "avg_hr": 72.8,
+    "max_hr": 102.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20648710509,
     "name": "Walk / jog",
     "type": "Run",
