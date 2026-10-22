@@ -1,5 +1,20 @@
 [
   {
+    "id": 20684974142,
+    "name": "Ochtendloop",
+    "type": "Run",
+    "date": "2026-10-22T10:07:13Z",
+    "distance_km": 4.145,
+    "moving_time_s": 2721,
+    "elapsed_time_s": 2905,
+    "elevation_m": 45.0,
+    "avg_hr": 79.1,
+    "max_hr": 96.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20671623167,
     "name": "Daystart ☀️",
     "type": "Run",
