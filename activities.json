@@ -1,7 +1,22 @@
 [
   {
+    "id": 20697925561,
+    "name": "Daystart 👌",
+    "type": "Run",
+    "date": "2026-10-23T09:46:28Z",
+    "distance_km": 5.165,
+    "moving_time_s": 3589,
+    "elapsed_time_s": 4743,
+    "elevation_m": 52.0,
+    "avg_hr": 78.5,
+    "max_hr": 96.0,
+    "kudos": 4,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20684974142,
-    "name": "Ochtendloop",
+    "name": "Morning walk.",
     "type": "Run",
     "date": "2026-10-22T10:07:13Z",
     "distance_km": 4.145,
@@ -10,7 +25,7 @@
     "elevation_m": 45.0,
     "avg_hr": 79.1,
     "max_hr": 96.0,
-    "kudos": 0,
+    "kudos": 1,
     "prs": 0,
     "achievements": 0
   },
