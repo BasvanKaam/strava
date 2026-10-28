@@ -1,5 +1,20 @@
 [
   {
+    "id": 20762340211,
+    "name": "Morning walk ☀️",
+    "type": "Run",
+    "date": "2026-10-28T09:58:21Z",
+    "distance_km": 5.143,
+    "moving_time_s": 3270,
+    "elapsed_time_s": 3300,
+    "elevation_m": 9.0,
+    "avg_hr": 80.6,
+    "max_hr": 98.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20747983470,
     "name": "Monrong walk, day kick off.",
     "type": "Run",
@@ -10,7 +25,7 @@
     "elevation_m": 26.0,
     "avg_hr": 76.7,
     "max_hr": 102.0,
-    "kudos": 6,
+    "kudos": 7,
     "prs": 0,
     "achievements": 0
   },
