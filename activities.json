@@ -1,5 +1,35 @@
 [
   {
+    "id": 20767356245,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-10-28T17:25:47Z",
+    "distance_km": 2.118,
+    "moving_time_s": 1294,
+    "elapsed_time_s": 1308,
+    "elevation_m": 8.0,
+    "avg_hr": 83.4,
+    "max_hr": 96.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
+    "id": 20765197876,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-10-28T13:49:59Z",
+    "distance_km": 3.739,
+    "moving_time_s": 2841,
+    "elapsed_time_s": 3117,
+    "elevation_m": 15.0,
+    "avg_hr": 75.2,
+    "max_hr": 95.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20762340211,
     "name": "Morning walk ☀️",
     "type": "Run",
@@ -10,7 +40,7 @@
     "elevation_m": 9.0,
     "avg_hr": 80.6,
     "max_hr": 98.0,
-    "kudos": 0,
+    "kudos": 5,
     "prs": 0,
     "achievements": 0
   },
@@ -25,7 +55,7 @@
     "elevation_m": 26.0,
     "avg_hr": 76.7,
     "max_hr": 102.0,
-    "kudos": 7,
+    "kudos": 8,
     "prs": 0,
     "achievements": 0
   },
