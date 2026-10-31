@@ -1,7 +1,7 @@
 [
   {
     "id": 20806474724,
-    "name": "Namiddagloop",
+    "name": "Afternoon walk with my ❤️",
     "type": "Run",
     "date": "2026-10-31T16:28:53Z",
     "distance_km": 3.082,
@@ -10,7 +10,7 @@
     "elevation_m": 6.0,
     "avg_hr": 84.7,
     "max_hr": 106.0,
-    "kudos": 0,
+    "kudos": 5,
     "prs": 0,
     "achievements": 0
   },
@@ -25,7 +25,7 @@
     "elevation_m": 5.0,
     "avg_hr": 90.6,
     "max_hr": 115.0,
-    "kudos": 0,
+    "kudos": 1,
     "prs": 0,
     "achievements": 0
   },
@@ -40,7 +40,7 @@
     "elevation_m": 3.0,
     "avg_hr": 96.3,
     "max_hr": 115.0,
-    "kudos": 0,
+    "kudos": 1,
     "prs": 0,
     "achievements": 0
   },
