@@ -1,5 +1,35 @@
 [
   {
+    "id": 20819572952,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-11-01T16:40:01Z",
+    "distance_km": 2.046,
+    "moving_time_s": 1221,
+    "elapsed_time_s": 1222,
+    "elevation_m": 3.0,
+    "avg_hr": 83.2,
+    "max_hr": 112.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
+    "id": 20816206190,
+    "name": "Middagloop",
+    "type": "Run",
+    "date": "2026-11-01T11:31:17Z",
+    "distance_km": 5.581,
+    "moving_time_s": 3909,
+    "elapsed_time_s": 5449,
+    "elevation_m": 19.0,
+    "avg_hr": 77.1,
+    "max_hr": 100.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20806474724,
     "name": "Afternoon walk with my ❤️",
     "type": "Run",
@@ -10,7 +40,7 @@
     "elevation_m": 6.0,
     "avg_hr": 84.7,
     "max_hr": 106.0,
-    "kudos": 7,
+    "kudos": 8,
     "prs": 0,
     "achievements": 0
   },
