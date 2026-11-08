@@ -1,5 +1,20 @@
 [
   {
+    "id": 20912316453,
+    "name": "Middagloop",
+    "type": "Run",
+    "date": "2026-11-08T12:35:28Z",
+    "distance_km": 4.005,
+    "moving_time_s": 6129,
+    "elapsed_time_s": 19873,
+    "elevation_m": 66.0,
+    "avg_hr": 84.3,
+    "max_hr": 107.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20881955012,
     "name": "Middagloop",
     "type": "Run",
