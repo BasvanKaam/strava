@@ -1,7 +1,22 @@
 [
   {
+    "id": 20921077458,
+    "name": "Ochtendloop",
+    "type": "Run",
+    "date": "2026-11-09T09:06:32Z",
+    "distance_km": 3.342,
+    "moving_time_s": 2717,
+    "elapsed_time_s": 21612,
+    "elevation_m": 57.0,
+    "avg_hr": 96.4,
+    "max_hr": 130.0,
+    "kudos": 0,
+    "prs": 1,
+    "achievements": 1
+  },
+  {
     "id": 20912316453,
-    "name": "Middagloop",
+    "name": "To and from the snooker venue 💪",
     "type": "Run",
     "date": "2026-11-08T12:35:28Z",
     "distance_km": 4.005,
@@ -10,7 +25,7 @@
     "elevation_m": 66.0,
     "avg_hr": 84.3,
     "max_hr": 107.0,
-    "kudos": 0,
+    "kudos": 3,
     "prs": 0,
     "achievements": 0
   },
