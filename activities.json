@@ -1,7 +1,7 @@
 [
   {
     "id": 20934819463,
-    "name": "Ochtendloop",
+    "name": "To and from the snooker venue 🙏👌",
     "type": "Run",
     "date": "2026-11-10T10:14:45Z",
     "distance_km": 3.358,
@@ -10,7 +10,7 @@
     "elevation_m": 60.0,
     "avg_hr": 97.7,
     "max_hr": 121.0,
-    "kudos": 0,
+    "kudos": 5,
     "prs": 1,
     "achievements": 1
   },
@@ -46,7 +46,7 @@
   },
   {
     "id": 20881955012,
-    "name": "Middagloop",
+    "name": "Afternoon walk 🌹",
     "type": "Run",
     "date": "2026-11-06T12:36:35Z",
     "distance_km": 5.351,
@@ -61,7 +61,7 @@
   },
   {
     "id": 20868562705,
-    "name": "Middagloop",
+    "name": "Lunch 🙏",
     "type": "Run",
     "date": "2026-11-05T11:21:59Z",
     "distance_km": 4.083,
