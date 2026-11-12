@@ -1,5 +1,20 @@
 [
   {
+    "id": 20957361254,
+    "name": "Ochtendloop",
+    "type": "Run",
+    "date": "2026-11-12T10:06:21Z",
+    "distance_km": 2.663,
+    "moving_time_s": 1945,
+    "elapsed_time_s": 2379,
+    "elevation_m": 10.0,
+    "avg_hr": 83.8,
+    "max_hr": 104.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 20934819463,
     "name": "To and from the snooker venue 🙏👌",
     "type": "Run",
