@@ -1,7 +1,22 @@
 [
   {
+    "id": 21121536674,
+    "name": "Namiddagloop",
+    "type": "Run",
+    "date": "2026-11-25T17:11:54Z",
+    "distance_km": 2.104,
+    "moving_time_s": 1271,
+    "elapsed_time_s": 1376,
+    "elevation_m": 14.0,
+    "avg_hr": 90.1,
+    "max_hr": 99.0,
+    "kudos": 0,
+    "prs": 0,
+    "achievements": 0
+  },
+  {
     "id": 21104850284,
-    "name": "Ochtendloop",
+    "name": "Morning walk ☀️",
     "type": "Run",
     "date": "2026-11-24T09:47:22Z",
     "distance_km": 5.24,
@@ -10,13 +25,13 @@
     "elevation_m": 6.0,
     "avg_hr": 75.6,
     "max_hr": 99.0,
-    "kudos": 0,
+    "kudos": 3,
     "prs": 0,
     "achievements": 0
   },
   {
     "id": 21095150223,
-    "name": "Namiddagloop",
+    "name": "Afternoon walk.",
     "type": "Run",
     "date": "2026-11-23T14:32:52Z",
     "distance_km": 3.166,
@@ -31,7 +46,7 @@
   },
   {
     "id": 21092960501,
-    "name": "Ochtendloop",
+    "name": "Morning walk.",
     "type": "Run",
     "date": "2026-11-23T09:43:30Z",
     "distance_km": 5.39,
@@ -46,7 +61,7 @@
   },
   {
     "id": 21072064354,
-    "name": "Namiddagloop",
+    "name": "Afternoon walk.",
     "type": "Run",
     "date": "2026-11-21T15:27:07Z",
     "distance_km": 2.182,
@@ -61,7 +76,7 @@
   },
   {
     "id": 21056845328,
-    "name": "Ochtendloop",
+    "name": "Afternoon walk.",
     "type": "Run",
     "date": "2026-11-20T10:05:46Z",
     "distance_km": 6.021,
@@ -76,7 +91,7 @@
   },
   {
     "id": 21047937757,
-    "name": "Namiddagloop",
+    "name": "Afternoon walk.",
     "type": "Run",
     "date": "2026-11-19T15:53:47Z",
     "distance_km": 3.18,
@@ -91,7 +106,7 @@
   },
   {
     "id": 21006496542,
-    "name": "Ochtendloop",
+    "name": "Morning walk.",
     "type": "Run",
     "date": "2026-11-16T09:52:18Z",
     "distance_km": 3.992,
@@ -106,7 +121,7 @@
   },
   {
     "id": 20995057571,
-    "name": "Middagloop",
+    "name": "Afternoon walk.",
     "type": "Run",
     "date": "2026-11-15T11:07:24Z",
     "distance_km": 3.061,
